@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="Report_Name">
+          <DataField>Report_Name</DataField>
+        </Field>
+        <Field Name="No_HREmployee">
+          <DataField>No_HREmployee</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="ReimbursedLeaveDays_HREmployee">
+          <DataField>ReimbursedLeaveDays_HREmployee</DataField>
+        </Field>
+        <Field Name="ReimbursedLeaveDays_HREmployeeFormat">
+          <DataField>ReimbursedLeaveDays_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="AllocatedLeaveDays_HREmployee">
+          <DataField>AllocatedLeaveDays_HREmployee</DataField>
+        </Field>
+        <Field Name="AllocatedLeaveDays_HREmployeeFormat">
+          <DataField>AllocatedLeaveDays_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="TotalLeaveDays_HREmployee">
+          <DataField>TotalLeaveDays_HREmployee</DataField>
+        </Field>
+        <Field Name="TotalLeaveDays_HREmployeeFormat">
+          <DataField>TotalLeaveDays_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="TotalLeaveTaken_HREmployee">
+          <DataField>TotalLeaveTaken_HREmployee</DataField>
+        </Field>
+        <Field Name="TotalLeaveTaken_HREmployeeFormat">
+          <DataField>TotalLeaveTaken_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="LeaveBalance_HREmployee">
+          <DataField>LeaveBalance_HREmployee</DataField>
+        </Field>
+        <Field Name="LeaveBalance_HREmployeeFormat">
+          <DataField>LeaveBalance_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="LeaveCarryForward_HREmployee">
+          <DataField>LeaveCarryForward_HREmployee</DataField>
+        </Field>
+        <Field Name="LeaveCarryForward_HREmployeeFormat">
+          <DataField>LeaveCarryForward_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture">
+          <DataField>CompanyInfoPicture</DataField>
+        </Field>
+        <Field Name="CompanyInfoPostCode">
+          <DataField>CompanyInfoPostCode</DataField>
+        </Field>
+        <Field Name="PhoneNo">
+          <DataField>PhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfoAddress">
+          <DataField>CompanyInfoAddress</DataField>
+        </Field>
+        <Field Name="MonthlyAccrued_HREmployee">
+          <DataField>MonthlyAccrued_HREmployee</DataField>
+        </Field>
+        <Field Name="MonthlyAccrued_HREmployeeFormat">
+          <DataField>MonthlyAccrued_HREmployeeFormat</DataField>
+        </Field>
+        <Field Name="TotalLeavesTaken">
+          <DataField>TotalLeavesTaken</DataField>
+        </Field>
+        <Field Name="TotalLeavesTakenFormat">
+          <DataField>TotalLeavesTakenFormat</DataField>
+        </Field>
+        <Field Name="CarryForward">
+          <DataField>CarryForward</DataField>
+        </Field>
+        <Field Name="CarryForwardFormat">
+          <DataField>CarryForwardFormat</DataField>
+        </Field>
+        <Field Name="AllocatedLeaveDays">
+          <DataField>AllocatedLeaveDays</DataField>
+        </Field>
+        <Field Name="AllocatedLeaveDaysFormat">
+          <DataField>AllocatedLeaveDaysFormat</DataField>
+        </Field>
+        <Field Name="MonthlyAccrued">
+          <DataField>MonthlyAccrued</DataField>
+        </Field>
+        <Field Name="MonthlyAccruedFormat">
+          <DataField>MonthlyAccruedFormat</DataField>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+        </Field>
+        <Field Name="BalanceFormat">
+          <DataField>BalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalLeaves">
+          <DataField>TotalLeaves</DataField>
+        </Field>
+        <Field Name="TotalLeavesFormat">
+          <DataField>TotalLeavesFormat</DataField>
+        </Field>
+        <Field Name="ReinbursedLeaves">
+          <DataField>ReinbursedLeaves</DataField>
+        </Field>
+        <Field Name="ReinbursedLeavesFormat">
+          <DataField>ReinbursedLeavesFormat</DataField>
+        </Field>
+        <Field Name="LeavePeriod">
+          <DataField>LeavePeriod</DataField>
+        </Field>
+        <Field Name="LeaveType">
+          <DataField>LeaveType</DataField>
+        </Field>
+        <Field Name="JobTitle_HREmployee">
+          <DataField>JobTitle_HREmployee</DataField>
+        </Field>
+        <Field Name="ContractType_HREmployee">
+          <DataField>ContractType_HREmployee</DataField>
+        </Field>
+        <Field Name="GlobalDimension1Code_HREmployee">
+          <DataField>GlobalDimension1Code_HREmployee</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_HREmployee">
+          <DataField>GlobalDimension2Code_HREmployee</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

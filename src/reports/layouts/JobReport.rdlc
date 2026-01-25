@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="CompanyPIN">
+          <DataField>CompanyPIN</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="ComapnyEmail">
+          <DataField>ComapnyEmail</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="JobID">
+          <DataField>JobID</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="RequisitionType">
+          <DataField>RequisitionType</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenterName">
+          <DataField>ResponsibilityCenterName</DataField>
+        </Field>
+        <Field Name="SubResponsibilityCenter">
+          <DataField>SubResponsibilityCenter</DataField>
+        </Field>
+        <Field Name="ReportingToDesc">
+          <DataField>ReportingToDesc</DataField>
+        </Field>
+        <Field Name="ReasonforRecruitment">
+          <DataField>ReasonforRecruitment</DataField>
+        </Field>
+        <Field Name="Positions">
+          <DataField>Positions</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="CurrentStage">
+          <DataField>CurrentStage</DataField>
+        </Field>
+        <Field Name="ShowShortlisted">
+          <DataField>ShowShortlisted</DataField>
+        </Field>
+        <Field Name="ShowUnshortlisted">
+          <DataField>ShowUnshortlisted</DataField>
+        </Field>
+        <Field Name="ShowPassedFirstInterview">
+          <DataField>ShowPassedFirstInterview</DataField>
+        </Field>
+        <Field Name="ShowFailedFirstInterview">
+          <DataField>ShowFailedFirstInterview</DataField>
+        </Field>
+        <Field Name="ShowPassedDueDiligence">
+          <DataField>ShowPassedDueDiligence</DataField>
+        </Field>
+        <Field Name="ShowFailedDueDiligence">
+          <DataField>ShowFailedDueDiligence</DataField>
+        </Field>
+        <Field Name="ShowPassedSecondInterview">
+          <DataField>ShowPassedSecondInterview</DataField>
+        </Field>
+        <Field Name="ShowFailedSecondInterview">
+          <DataField>ShowFailedSecondInterview</DataField>
+        </Field>
+        <Field Name="ShowSuccessful">
+          <DataField>ShowSuccessful</DataField>
+        </Field>
+        <Field Name="ShowUnsuccessful">
+          <DataField>ShowUnsuccessful</DataField>
+        </Field>
+        <Field Name="ShowAllApplicants">
+          <DataField>ShowAllApplicants</DataField>
+        </Field>
+        <Field Name="ApplicationNo_ShowAllApplicantApps">
+          <DataField>ApplicationNo_ShowAllApplicantApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_ShowAllApplicantApps">
+          <DataField>ApplicantName_ShowAllApplicantApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_ShowAllApplicantApps">
+          <DataField>Applicant_Email_ShowAllApplicantApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_ShowAllApplicantApps">
+          <DataField>Mobile_No_ShowAllApplicantApps</DataField>
+        </Field>
+        <Field Name="Shortlisting_Comments_ShowAllApplicantApps">
+          <DataField>Shortlisting_Comments_ShowAllApplicantApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_ShortlistedApps">
+          <DataField>ApplicationNo_ShortlistedApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_ShortlistedApps">
+          <DataField>ApplicantName_ShortlistedApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_ShortlistedApps">
+          <DataField>Applicant_Email_ShortlistedApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_ShortlistedApps">
+          <DataField>Mobile_No_ShortlistedApps</DataField>
+        </Field>
+        <Field Name="Shortlisting_Comments_ShortlistedApps">
+          <DataField>Shortlisting_Comments_ShortlistedApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_UnShortlistedApps">
+          <DataField>ApplicationNo_UnShortlistedApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_UnShortlistedApps">
+          <DataField>ApplicantName_UnShortlistedApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_UnShortlistedApps">
+          <DataField>Applicant_Email_UnShortlistedApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_UnShortlistedApps">
+          <DataField>Mobile_No_UnShortlistedApps</DataField>
+        </Field>
+        <Field Name="Shortlisting_Comments_UnShortlistedApps">
+          <DataField>Shortlisting_Comments_UnShortlistedApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_PassedFirstInterviewApps">
+          <DataField>ApplicationNo_PassedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_PassedFirstInterviewApps">
+          <DataField>ApplicantName_PassedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_PassedFirstInterviewApps">
+          <DataField>Applicant_Email_PassedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_PassedFirstInterviewApps">
+          <DataField>Mobile_No_PassedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="FirstInterview_Comments_PassedFirstInterviewApps">
+          <DataField>FirstInterview_Comments_PassedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_FailedFirstInterviewApps">
+          <DataField>ApplicationNo_FailedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_FailedFirstInterviewApps">
+          <DataField>ApplicantName_FailedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_FailedFirstInterviewApps">
+          <DataField>Applicant_Email_FailedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_FailedFirstInterviewApps">
+          <DataField>Mobile_No_FailedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="FirstInterview_Comments_FailedFirstInterviewApps">
+          <DataField>FirstInterview_Comments_FailedFirstInterviewApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_PasseddueDiligenceApps">
+          <DataField>ApplicationNo_PasseddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_PasseddueDiligenceApps">
+          <DataField>ApplicantName_PasseddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_PasseddueDiligenceApps">
+          <DataField>Applicant_Email_PasseddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_PasseddueDiligenceApps">
+          <DataField>Mobile_No_PasseddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="DueDiligence_Comments_PasseddueDiligenceApps">
+          <DataField>DueDiligence_Comments_PasseddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_FaileddueDiligenceApps">
+          <DataField>ApplicationNo_FaileddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_FaileddueDiligenceApps">
+          <DataField>ApplicantName_FaileddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_FaileddueDiligenceApps">
+          <DataField>Applicant_Email_FaileddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_FaileddueDiligenceApps">
+          <DataField>Mobile_No_FaileddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="DueDiligence_Comments_FaileddueDiligenceApps">
+          <DataField>DueDiligence_Comments_FaileddueDiligenceApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_PassedSecondInterview">
+          <DataField>ApplicationNo_PassedSecondInterview</DataField>
+        </Field>
+        <Field Name="ApplicantName_PassedSecondInterview">
+          <DataField>ApplicantName_PassedSecondInterview</DataField>
+        </Field>
+        <Field Name="Applicant_Email_PassedSecondInterview">
+          <DataField>Applicant_Email_PassedSecondInterview</DataField>
+        </Field>
+        <Field Name="Mobile_No_PassedSecondInterview">
+          <DataField>Mobile_No_PassedSecondInterview</DataField>
+        </Field>
+        <Field Name="SecondInterviewComments_PassedSecondInterview">
+          <DataField>SecondInterviewComments_PassedSecondInterview</DataField>
+        </Field>
+        <Field Name="ApplicationNo_FailedSecondInterview">
+          <DataField>ApplicationNo_FailedSecondInterview</DataField>
+        </Field>
+        <Field Name="ApplicantName_FailedSecondInterview">
+          <DataField>ApplicantName_FailedSecondInterview</DataField>
+        </Field>
+        <Field Name="Applicant_Email_FailedSecondInterview">
+          <DataField>Applicant_Email_FailedSecondInterview</DataField>
+        </Field>
+        <Field Name="Mobile_No_FailedSecondInterview">
+          <DataField>Mobile_No_FailedSecondInterview</DataField>
+        </Field>
+        <Field Name="SecondInterviewComments_FailedSecondInterview">
+          <DataField>SecondInterviewComments_FailedSecondInterview</DataField>
+        </Field>
+        <Field Name="ApplicationNo_UnsuccessfulApps">
+          <DataField>ApplicationNo_UnsuccessfulApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_UnsuccessfulApps">
+          <DataField>ApplicantName_UnsuccessfulApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_UnsuccessfulApps">
+          <DataField>Applicant_Email_UnsuccessfulApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_UnsuccessfulApps">
+          <DataField>Mobile_No_UnsuccessfulApps</DataField>
+        </Field>
+        <Field Name="FinalComments_UnsuccessfulApps">
+          <DataField>FinalComments_UnsuccessfulApps</DataField>
+        </Field>
+        <Field Name="ApplicationNo_SuccessfulApps">
+          <DataField>ApplicationNo_SuccessfulApps</DataField>
+        </Field>
+        <Field Name="ApplicantName_SuccessfulApps">
+          <DataField>ApplicantName_SuccessfulApps</DataField>
+        </Field>
+        <Field Name="Applicant_Email_SuccessfulApps">
+          <DataField>Applicant_Email_SuccessfulApps</DataField>
+        </Field>
+        <Field Name="Mobile_No_SuccessfulApps">
+          <DataField>Mobile_No_SuccessfulApps</DataField>
+        </Field>
+        <Field Name="FinalComments_SuccessfulApps">
+          <DataField>FinalComments_SuccessfulApps</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

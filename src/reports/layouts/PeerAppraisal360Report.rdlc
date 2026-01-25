@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_PeerAppraisalHeader">
+          <DataField>No_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Description_PeerAppraisalHeader">
+          <DataField>Description_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Period_PeerAppraisalHeader">
+          <DataField>Period_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="StaffNo_PeerAppraisalHeader">
+          <DataField>StaffNo_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="PeerAppraiser1_PeerAppraisalHeader">
+          <DataField>PeerAppraiser1_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="PeerAppraiser2_PeerAppraisalHeader">
+          <DataField>PeerAppraiser2_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="PeerAppraiser3_PeerAppraisalHeader">
+          <DataField>PeerAppraiser3_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_PeerAppraisalHeader">
+          <DataField>CreatedBy_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="CreatedOn_PeerAppraisalHeader">
+          <DataField>CreatedOn_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Status_PeerAppraisalHeader">
+          <DataField>Status_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Directorate_PeerAppraisalHeader">
+          <DataField>Directorate_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Department_PeerAppraisalHeader">
+          <DataField>Department_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Supervisor_PeerAppraisalHeader">
+          <DataField>Supervisor_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="SupervisorName_PeerAppraisalHeader">
+          <DataField>SupervisorName_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Designation_PeerAppraisalHeader">
+          <DataField>Designation_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Levelofinteraction_PeerAppraisalHeader">
+          <DataField>Levelofinteraction_PeerAppraisalHeader</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompPict">
+          <DataField>CompPict</DataField>
+        </Field>
+        <Field Name="StaffName">
+          <DataField>StaffName</DataField>
+        </Field>
+        <Field Name="AssessorNo">
+          <DataField>AssessorNo</DataField>
+        </Field>
+        <Field Name="AssessorName">
+          <DataField>AssessorName</DataField>
+        </Field>
+        <Field Name="StaffSignature">
+          <DataField>StaffSignature</DataField>
+        </Field>
+        <Field Name="AssessorSignature">
+          <DataField>AssessorSignature</DataField>
+        </Field>
+        <Field Name="StaffJobTitle">
+          <DataField>StaffJobTitle</DataField>
+        </Field>
+        <Field Name="AssessorJobTitle">
+          <DataField>AssessorJobTitle</DataField>
+        </Field>
+        <Field Name="AssessorDepartment">
+          <DataField>AssessorDepartment</DataField>
+        </Field>
+        <Field Name="AssesserLocation">
+          <DataField>AssesserLocation</DataField>
+        </Field>
+        <Field Name="DocNo_PeerAppraisalLines">
+          <DataField>DocNo_PeerAppraisalLines</DataField>
+        </Field>
+        <Field Name="EntryNo_PeerAppraisalLines">
+          <DataField>EntryNo_PeerAppraisalLines</DataField>
+        </Field>
+        <Field Name="Type_PeerAppraisalLines">
+          <DataField>Type_PeerAppraisalLines</DataField>
+        </Field>
+        <Field Name="SectionNo_PeerAppraisalLines">
+          <DataField>SectionNo_PeerAppraisalLines</DataField>
+        </Field>
+        <Field Name="PeerLevel_PeerAppraisalLines">
+          <DataField>PeerLevel_PeerAppraisalLines</DataField>
+        </Field>
+        <Field Name="Remarks_PeerAppraisalLines">
+          <DataField>Remarks_PeerAppraisalLines</DataField>
+        </Field>
+        <Field Name="V1stAppraiser_PeerAppraisalLines">
+          <DataField>V1stAppraiser_PeerAppraisalLines</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Employee">
+          <DataField>No_Employee</DataField>
+        </Field>
+        <Field Name="Initials_Employee">
+          <DataField>Initials_Employee</DataField>
+        </Field>
+        <Field Name="Department_Employee">
+          <DataField>Department_Employee</DataField>
+        </Field>
+        <Field Name="FullName_Employee">
+          <DataField>FullName_Employee</DataField>
+        </Field>
+        <Field Name="Names">
+          <DataField>Names</DataField>
+        </Field>
+        <Field Name="JobTitle_Employee">
+          <DataField>JobTitle_Employee</DataField>
+        </Field>
+        <Field Name="Section_Employee">
+          <DataField>Section_Employee</DataField>
+        </Field>
+        <Field Name="SelectedCountry">
+          <DataField>SelectedCountry</DataField>
+        </Field>
+        <Field Name="Payroll_Currency">
+          <DataField>Payroll_Currency</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompAddress">
+          <DataField>CompAddress</DataField>
+        </Field>
+        <Field Name="CompCity">
+          <DataField>CompCity</DataField>
+        </Field>
+        <Field Name="CompPicture">
+          <DataField>CompPicture</DataField>
+        </Field>
+        <Field Name="PayrollProcessed">
+          <DataField>PayrollProcessed</DataField>
+        </Field>
+        <Field Name="App1Name">
+          <DataField>App1Name</DataField>
+        </Field>
+        <Field Name="App1Date">
+          <DataField>App1Date</DataField>
+        </Field>
+        <Field Name="App1Signature">
+          <DataField>App1Signature</DataField>
+        </Field>
+        <Field Name="App2Name">
+          <DataField>App2Name</DataField>
+        </Field>
+        <Field Name="App2Date">
+          <DataField>App2Date</DataField>
+        </Field>
+        <Field Name="App2Signature">
+          <DataField>App2Signature</DataField>
+        </Field>
+        <Field Name="App3Name">
+          <DataField>App3Name</DataField>
+        </Field>
+        <Field Name="App3Date">
+          <DataField>App3Date</DataField>
+        </Field>
+        <Field Name="App3Signature">
+          <DataField>App3Signature</DataField>
+        </Field>
+        <Field Name="App4Name">
+          <DataField>App4Name</DataField>
+        </Field>
+        <Field Name="App4Date">
+          <DataField>App4Date</DataField>
+        </Field>
+        <Field Name="App4Signature">
+          <DataField>App4Signature</DataField>
+        </Field>
+        <Field Name="App5Name">
+          <DataField>App5Name</DataField>
+        </Field>
+        <Field Name="App5Date">
+          <DataField>App5Date</DataField>
+        </Field>
+        <Field Name="App5Signature">
+          <DataField>App5Signature</DataField>
+        </Field>
+        <Field Name="Employee_PayrollTrans">
+          <DataField>Employee_PayrollTrans</DataField>
+        </Field>
+        <Field Name="PayType_PayrollTrans">
+          <DataField>PayType_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Code_PayrollTrans">
+          <DataField>Code_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Amount_PayrollTrans">
+          <DataField>Amount_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Amount_PayrollTransFormat">
+          <DataField>Amount_PayrollTransFormat</DataField>
+        </Field>
+        <Field Name="DateEntered_PayrollTrans">
+          <DataField>DateEntered_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Period_PayrollTrans">
+          <DataField>Period_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Description_PayrollTrans">
+          <DataField>Description_PayrollTrans</DataField>
+        </Field>
+        <Field Name="BasicSalaryCode_PayrollTrans">
+          <DataField>BasicSalaryCode_PayrollTrans</DataField>
+        </Field>
+        <Field Name="NonCashBenefit_PayrollTrans">
+          <DataField>NonCashBenefit_PayrollTrans</DataField>
+        </Field>
+        <Field Name="GrossAmount">
+          <DataField>GrossAmount</DataField>
+        </Field>
+        <Field Name="GrossAmountFormat">
+          <DataField>GrossAmountFormat</DataField>
+        </Field>
+        <Field Name="BasicPay">
+          <DataField>BasicPay</DataField>
+        </Field>
+        <Field Name="BasicPayFormat">
+          <DataField>BasicPayFormat</DataField>
+        </Field>
+        <Field Name="NetPay">
+          <DataField>NetPay</DataField>
+        </Field>
+        <Field Name="NetPayFormat">
+          <DataField>NetPayFormat</DataField>
+        </Field>
+        <Field Name="Paye_PayrollTrans">
+          <DataField>Paye_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Deductions">
+          <DataField>Deductions</DataField>
+        </Field>
+        <Field Name="DeductionsFormat">
+          <DataField>DeductionsFormat</DataField>
+        </Field>
+        <Field Name="DeductionsThatReduceGross">
+          <DataField>DeductionsThatReduceGross</DataField>
+        </Field>
+        <Field Name="DeductionsThatReduceGrossFormat">
+          <DataField>DeductionsThatReduceGrossFormat</DataField>
+        </Field>
+        <Field Name="IsNHIF">
+          <DataField>IsNHIF</DataField>
+        </Field>
+        <Field Name="IsHELB">
+          <DataField>IsHELB</DataField>
+        </Field>
+        <Field Name="IsNSSF">
+          <DataField>IsNSSF</DataField>
+        </Field>
+        <Field Name="IsOther">
+          <DataField>IsOther</DataField>
+        </Field>
+        <Field Name="ShowOnMasterRoll">
+          <DataField>ShowOnMasterRoll</DataField>
+        </Field>
+        <Field Name="IsStatutoryDeduction">
+          <DataField>IsStatutoryDeduction</DataField>
+        </Field>
+        <Field Name="OtherAllowances">
+          <DataField>OtherAllowances</DataField>
+        </Field>
+        <Field Name="OtherAllowancesFormat">
+          <DataField>OtherAllowancesFormat</DataField>
+        </Field>
+        <Field Name="OtherDeductions">
+          <DataField>OtherDeductions</DataField>
+        </Field>
+        <Field Name="OtherDeductionsFormat">
+          <DataField>OtherDeductionsFormat</DataField>
+        </Field>
+        <Field Name="Yname">
+          <DataField>Yname</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,46 @@
+{
+  "id": "673d86ca-26ca-434d-9d67-7a3dcd07efa3",
+  "name": "Hr Admin and Payroll",
+  "publisher": "Panache Technohub Limited",
+  "version": "27.1.1.40",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [{
+    "id": "a2eb0ca6-73f5-46c2-85dd-704595e8e548",
+    "publisher": "Panache Technohub Limited",
+    "name": "PTL Base Application",
+    "version": "27.1.1.10"
+  },{
+   "id": "2d485f67-31c6-4354-aecc-ce271c008bca",
+  "name": "Contract Management",
+ "publisher": "Panache Technohub Limited",
+  "version": "27.1.1.4"
+  }],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "27.0.0.0",
+  "idRanges": [
+    {
+      "from": 51525300,
+      "to": 51525599
+    },
+    {
+      "from": 52211523,
+      "to": 52211622
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "16.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_StaffAppraisalHeader">
+          <DataField>No_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="StaffNo_StaffAppraisalHeader">
+          <DataField>StaffNo_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="StaffName_StaffAppraisalHeader">
+          <DataField>StaffName_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Directorate_StaffAppraisalHeader">
+          <DataField>Directorate_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Department_StaffAppraisalHeader">
+          <DataField>Department_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Period_StaffAppraisalHeader">
+          <DataField>Period_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="CreatedOn_StaffAppraisalHeader">
+          <DataField>CreatedOn_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="CreatedBy_StaffAppraisalHeader">
+          <DataField>CreatedBy_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Supervisor_StaffAppraisalHeader">
+          <DataField>Supervisor_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="SupervisorName_StaffAppraisalHeader">
+          <DataField>SupervisorName_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="PeriodDesc_StaffAppraisalHeader">
+          <DataField>PeriodDesc_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Designation_StaffAppraisalHeader">
+          <DataField>Designation_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="SenttoSupervisor_StaffAppraisalHeader">
+          <DataField>SenttoSupervisor_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="ApprovedBySupervisor_StaffAppraisalHeader">
+          <DataField>ApprovedBySupervisor_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="Type_StaffAppraisalHeader">
+          <DataField>Type_StaffAppraisalHeader</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompPict">
+          <DataField>CompPict</DataField>
+        </Field>
+        <Field Name="EmployeeSignature">
+          <DataField>EmployeeSignature</DataField>
+        </Field>
+        <Field Name="SupervisorSignature">
+          <DataField>SupervisorSignature</DataField>
+        </Field>
+        <Field Name="SupervisorJobTitle">
+          <DataField>SupervisorJobTitle</DataField>
+        </Field>
+        <Field Name="SupervisorLocation">
+          <DataField>SupervisorLocation</DataField>
+        </Field>
+        <Field Name="SupervisorDept">
+          <DataField>SupervisorDept</DataField>
+        </Field>
+        <Field Name="ObjectivesSectionRatingTotal">
+          <DataField>ObjectivesSectionRatingTotal</DataField>
+        </Field>
+        <Field Name="ObjectivesSectionRatingTotalFormat">
+          <DataField>ObjectivesSectionRatingTotalFormat</DataField>
+        </Field>
+        <Field Name="Section1Score">
+          <DataField>Section1Score</DataField>
+        </Field>
+        <Field Name="Section1ScoreFormat">
+          <DataField>Section1ScoreFormat</DataField>
+        </Field>
+        <Field Name="ManagementSectionRatingTotal">
+          <DataField>ManagementSectionRatingTotal</DataField>
+        </Field>
+        <Field Name="ManagementSectionRatingTotalFormat">
+          <DataField>ManagementSectionRatingTotalFormat</DataField>
+        </Field>
+        <Field Name="KnowledgeSectionRatingTotal">
+          <DataField>KnowledgeSectionRatingTotal</DataField>
+        </Field>
+        <Field Name="KnowledgeSectionRatingTotalFormat">
+          <DataField>KnowledgeSectionRatingTotalFormat</DataField>
+        </Field>
+        <Field Name="ProblemSectionRatingTotal">
+          <DataField>ProblemSectionRatingTotal</DataField>
+        </Field>
+        <Field Name="ProblemSectionRatingTotalFormat">
+          <DataField>ProblemSectionRatingTotalFormat</DataField>
+        </Field>
+        <Field Name="CommsSectionRatingTotal">
+          <DataField>CommsSectionRatingTotal</DataField>
+        </Field>
+        <Field Name="CommsSectionRatingTotalFormat">
+          <DataField>CommsSectionRatingTotalFormat</DataField>
+        </Field>
+        <Field Name="Section2Score">
+          <DataField>Section2Score</DataField>
+        </Field>
+        <Field Name="Section2ScoreFormat">
+          <DataField>Section2ScoreFormat</DataField>
+        </Field>
+        <Field Name="Overall_Score___">
+          <DataField>Overall_Score___</DataField>
+        </Field>
+        <Field Name="Overall_Score___Format">
+          <DataField>Overall_Score___Format</DataField>
+        </Field>
+        <Field Name="DocNo_StaffAppraisalLines">
+          <DataField>DocNo_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="EntryNo_StaffAppraisalLines">
+          <DataField>EntryNo_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Type_StaffAppraisalLines">
+          <DataField>Type_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Rate_StaffAppraisalLines">
+          <DataField>Rate_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Rate_StaffAppraisalLinesFormat">
+          <DataField>Rate_StaffAppraisalLinesFormat</DataField>
+        </Field>
+        <Field Name="Remarks_StaffAppraisalLines">
+          <DataField>Remarks_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="ObjectiveCode_StaffAppraisalLines">
+          <DataField>ObjectiveCode_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Objective_StaffAppraisalLines">
+          <DataField>Objective_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Employees_Remarks_StaffAppraisalLines">
+          <DataField>Employees_Remarks_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="SupervisorRemarks_StaffAppraisalLines">
+          <DataField>SupervisorRemarks_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="SupervisorRate_StaffAppraisalLines">
+          <DataField>SupervisorRate_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="SupervisorRate_StaffAppraisalLinesFormat">
+          <DataField>SupervisorRate_StaffAppraisalLinesFormat</DataField>
+        </Field>
+        <Field Name="StaffNo_StaffAppraisalLines">
+          <DataField>StaffNo_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="SuccessMeasure_StaffAppraisalLines">
+          <DataField>SuccessMeasure_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="DueDate_StaffAppraisalLines">
+          <DataField>DueDate_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="SectionRating_StaffAppraisalLines">
+          <DataField>SectionRating_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="SectionRating_StaffAppraisalLinesFormat">
+          <DataField>SectionRating_StaffAppraisalLinesFormat</DataField>
+        </Field>
+        <Field Name="AppraiseeRemarks_StaffAppraisalLines">
+          <DataField>AppraiseeRemarks_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="AppraiseeRate_StaffAppraisalLines">
+          <DataField>AppraiseeRate_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="AppraiseeRate_StaffAppraisalLinesFormat">
+          <DataField>AppraiseeRate_StaffAppraisalLinesFormat</DataField>
+        </Field>
+        <Field Name="Peer1Feedback_StaffAppraisalLines">
+          <DataField>Peer1Feedback_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Peer2Feedback_StaffAppraisalLines">
+          <DataField>Peer2Feedback_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Peer3Feedback_StaffAppraisalLines">
+          <DataField>Peer3Feedback_StaffAppraisalLines</DataField>
+        </Field>
+        <Field Name="Entry_No">
+          <DataField>Entry_No</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

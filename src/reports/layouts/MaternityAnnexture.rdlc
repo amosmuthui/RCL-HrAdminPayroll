@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+        </Field>
+        <Field Name="MiddleName">
+          <DataField>MiddleName</DataField>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+        </Field>
+        <Field Name="NSSFNo">
+          <DataField>NSSFNo</DataField>
+        </Field>
+        <Field Name="NationalID">
+          <DataField>NationalID</DataField>
+        </Field>
+        <Field Name="CashAllowanceTransport">
+          <DataField>CashAllowanceTransport</DataField>
+        </Field>
+        <Field Name="CashAllowanceTransportFormat">
+          <DataField>CashAllowanceTransportFormat</DataField>
+        </Field>
+        <Field Name="CashAllowanceHouse">
+          <DataField>CashAllowanceHouse</DataField>
+        </Field>
+        <Field Name="CashAllowanceHouseFormat">
+          <DataField>CashAllowanceHouseFormat</DataField>
+        </Field>
+        <Field Name="OtherCashAllowance">
+          <DataField>OtherCashAllowance</DataField>
+        </Field>
+        <Field Name="OtherCashAllowanceFormat">
+          <DataField>OtherCashAllowanceFormat</DataField>
+        </Field>
+        <Field Name="TerminalBenefits">
+          <DataField>TerminalBenefits</DataField>
+        </Field>
+        <Field Name="TerminalBenefitsFormat">
+          <DataField>TerminalBenefitsFormat</DataField>
+        </Field>
+        <Field Name="PAYETaxableBase">
+          <DataField>PAYETaxableBase</DataField>
+        </Field>
+        <Field Name="PAYETaxableBaseFormat">
+          <DataField>PAYETaxableBaseFormat</DataField>
+        </Field>
+        <Field Name="PAYEDeductable">
+          <DataField>PAYEDeductable</DataField>
+        </Field>
+        <Field Name="PAYEDeductableFormat">
+          <DataField>PAYEDeductableFormat</DataField>
+        </Field>
+        <Field Name="BasicSalary">
+          <DataField>BasicSalary</DataField>
+        </Field>
+        <Field Name="BasicSalaryFormat">
+          <DataField>BasicSalaryFormat</DataField>
+        </Field>
+        <Field Name="PayPeriod">
+          <DataField>PayPeriod</DataField>
+        </Field>
+        <Field Name="EmployeeCBHISubsidies">
+          <DataField>EmployeeCBHISubsidies</DataField>
+        </Field>
+        <Field Name="EmployeeCBHISubsidiesFormat">
+          <DataField>EmployeeCBHISubsidiesFormat</DataField>
+        </Field>
+        <Field Name="DesiredCurrency">
+          <DataField>DesiredCurrency</DataField>
+        </Field>
+        <Field Name="TotalRemuneration">
+          <DataField>TotalRemuneration</DataField>
+        </Field>
+        <Field Name="TotalRemunerationFormat">
+          <DataField>TotalRemunerationFormat</DataField>
+        </Field>
+        <Field Name="TotalContribution">
+          <DataField>TotalContribution</DataField>
+        </Field>
+        <Field Name="TotalContributionFormat">
+          <DataField>TotalContributionFormat</DataField>
+        </Field>
+        <Field Name="DaysWorked">
+          <DataField>DaysWorked</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

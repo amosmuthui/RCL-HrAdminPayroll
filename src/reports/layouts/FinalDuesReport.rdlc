@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="CompanyPIN">
+          <DataField>CompanyPIN</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="ComapnyEmail">
+          <DataField>ComapnyEmail</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="TransactionType">
+          <DataField>TransactionType</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="WBNo">
+          <DataField>WBNo</DataField>
+        </Field>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="Position">
+          <DataField>Position</DataField>
+        </Field>
+        <Field Name="RSSBNo">
+          <DataField>RSSBNo</DataField>
+        </Field>
+        <Field Name="Bank">
+          <DataField>Bank</DataField>
+        </Field>
+        <Field Name="Period">
+          <DataField>Period</DataField>
+        </Field>
+        <Field Name="JoinDate">
+          <DataField>JoinDate</DataField>
+        </Field>
+        <Field Name="ExitDate">
+          <DataField>ExitDate</DataField>
+        </Field>
+        <Field Name="SeparationReason">
+          <DataField>SeparationReason</DataField>
+        </Field>
+        <Field Name="UnpaidWorkedDays">
+          <DataField>UnpaidWorkedDays</DataField>
+        </Field>
+        <Field Name="UnpaidWorkedDaysFormat">
+          <DataField>UnpaidWorkedDaysFormat</DataField>
+        </Field>
+        <Field Name="UntakenLeaveDays">
+          <DataField>UntakenLeaveDays</DataField>
+        </Field>
+        <Field Name="UntakenLeaveDaysFormat">
+          <DataField>UntakenLeaveDaysFormat</DataField>
+        </Field>
+        <Field Name="UntakenLeaveDescription">
+          <DataField>UntakenLeaveDescription</DataField>
+        </Field>
+        <Field Name="UnpaidDaysDescription">
+          <DataField>UnpaidDaysDescription</DataField>
+        </Field>
+        <Field Name="ApprovalStatus">
+          <DataField>ApprovalStatus</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="BankAccountNo">
+          <DataField>BankAccountNo</DataField>
+        </Field>
+        <Field Name="ContractualAmountType">
+          <DataField>ContractualAmountType</DataField>
+        </Field>
+        <Field Name="ContractualAmountCurrency">
+          <DataField>ContractualAmountCurrency</DataField>
+        </Field>
+        <Field Name="ContractualAmount">
+          <DataField>ContractualAmount</DataField>
+        </Field>
+        <Field Name="ContractualAmountFormat">
+          <DataField>ContractualAmountFormat</DataField>
+        </Field>
+        <Field Name="PayrollCountry">
+          <DataField>PayrollCountry</DataField>
+        </Field>
+        <Field Name="PayrollCurrency">
+          <DataField>PayrollCurrency</DataField>
+        </Field>
+        <Field Name="AdditionalEntitledDays">
+          <DataField>AdditionalEntitledDays</DataField>
+        </Field>
+        <Field Name="FinalMonthofService">
+          <DataField>FinalMonthofService</DataField>
+        </Field>
+        <Field Name="GrossSalary">
+          <DataField>GrossSalary</DataField>
+        </Field>
+        <Field Name="GrossSalaryFormat">
+          <DataField>GrossSalaryFormat</DataField>
+        </Field>
+        <Field Name="TotalFinalDues">
+          <DataField>TotalFinalDues</DataField>
+        </Field>
+        <Field Name="TotalFinalDuesFormat">
+          <DataField>TotalFinalDuesFormat</DataField>
+        </Field>
+        <Field Name="TaxableFinalDues">
+          <DataField>TaxableFinalDues</DataField>
+        </Field>
+        <Field Name="TaxableFinalDuesFormat">
+          <DataField>TaxableFinalDuesFormat</DataField>
+        </Field>
+        <Field Name="TotalDeductions">
+          <DataField>TotalDeductions</DataField>
+        </Field>
+        <Field Name="TotalDeductionsFormat">
+          <DataField>TotalDeductionsFormat</DataField>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+        </Field>
+        <Field Name="BalanceFormat">
+          <DataField>BalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalSocialSecurity">
+          <DataField>TotalSocialSecurity</DataField>
+        </Field>
+        <Field Name="TotalSocialSecurityFormat">
+          <DataField>TotalSocialSecurityFormat</DataField>
+        </Field>
+        <Field Name="SwiftCode">
+          <DataField>SwiftCode</DataField>
+        </Field>
+        <Field Name="NoticePeriod">
+          <DataField>NoticePeriod</DataField>
+        </Field>
+        <Field Name="NoticeGiven">
+          <DataField>NoticeGiven</DataField>
+        </Field>
+        <Field Name="Amount_paid">
+          <DataField>Amount_paid</DataField>
+        </Field>
+        <Field Name="Period_Processed">
+          <DataField>Period_Processed</DataField>
+        </Field>
+        <Field Name="ExchangeRateText">
+          <DataField>ExchangeRateText</DataField>
+        </Field>
+        <Field Name="ExchangeRateValue">
+          <DataField>ExchangeRateValue</DataField>
+        </Field>
+        <Field Name="ExchangeRateValueFormat">
+          <DataField>ExchangeRateValueFormat</DataField>
+        </Field>
+        <Field Name="FinalDuesInUSD">
+          <DataField>FinalDuesInUSD</DataField>
+        </Field>
+        <Field Name="FinalDuesInUSDFormat">
+          <DataField>FinalDuesInUSDFormat</DataField>
+        </Field>
+        <Field Name="App1Name">
+          <DataField>App1Name</DataField>
+        </Field>
+        <Field Name="App1Date">
+          <DataField>App1Date</DataField>
+        </Field>
+        <Field Name="App1Signature">
+          <DataField>App1Signature</DataField>
+        </Field>
+        <Field Name="App2Name">
+          <DataField>App2Name</DataField>
+        </Field>
+        <Field Name="App2Date">
+          <DataField>App2Date</DataField>
+        </Field>
+        <Field Name="App2Signature">
+          <DataField>App2Signature</DataField>
+        </Field>
+        <Field Name="App3Name">
+          <DataField>App3Name</DataField>
+        </Field>
+        <Field Name="App3Date">
+          <DataField>App3Date</DataField>
+        </Field>
+        <Field Name="App3Signature">
+          <DataField>App3Signature</DataField>
+        </Field>
+        <Field Name="App4Name">
+          <DataField>App4Name</DataField>
+        </Field>
+        <Field Name="App4Date">
+          <DataField>App4Date</DataField>
+        </Field>
+        <Field Name="App4Signature">
+          <DataField>App4Signature</DataField>
+        </Field>
+        <Field Name="App5Name">
+          <DataField>App5Name</DataField>
+        </Field>
+        <Field Name="App5Date">
+          <DataField>App5Date</DataField>
+        </Field>
+        <Field Name="App5Signature">
+          <DataField>App5Signature</DataField>
+        </Field>
+        <Field Name="EntryNo_Entitled">
+          <DataField>EntryNo_Entitled</DataField>
+        </Field>
+        <Field Name="LineDescription_Entitled">
+          <DataField>LineDescription_Entitled</DataField>
+        </Field>
+        <Field Name="LineNo_Structure">
+          <DataField>LineNo_Structure</DataField>
+        </Field>
+        <Field Name="Description_Structure">
+          <DataField>Description_Structure</DataField>
+        </Field>
+        <Field Name="Amount_Structure">
+          <DataField>Amount_Structure</DataField>
+        </Field>
+        <Field Name="Amount_StructureFormat">
+          <DataField>Amount_StructureFormat</DataField>
+        </Field>
+        <Field Name="LineNo_Lines">
+          <DataField>LineNo_Lines</DataField>
+        </Field>
+        <Field Name="Description_Lines">
+          <DataField>Description_Lines</DataField>
+        </Field>
+        <Field Name="TransType_Lines">
+          <DataField>TransType_Lines</DataField>
+        </Field>
+        <Field Name="Amount_Lines">
+          <DataField>Amount_Lines</DataField>
+        </Field>
+        <Field Name="Amount_LinesFormat">
+          <DataField>Amount_LinesFormat</DataField>
+        </Field>
+        <Field Name="Taxable">
+          <DataField>Taxable</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

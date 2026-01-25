@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="CompanyPIN">
+          <DataField>CompanyPIN</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="ComapnyEmail">
+          <DataField>ComapnyEmail</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="Names">
+          <DataField>Names</DataField>
+        </Field>
+        <Field Name="PayrollPeriod">
+          <DataField>PayrollPeriod</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="GrossAmount">
+          <DataField>GrossAmount</DataField>
+        </Field>
+        <Field Name="GrossAmountFormat">
+          <DataField>GrossAmountFormat</DataField>
+        </Field>
+        <Field Name="Paye">
+          <DataField>Paye</DataField>
+        </Field>
+        <Field Name="PayeFormat">
+          <DataField>PayeFormat</DataField>
+        </Field>
+        <Field Name="SocialSecurity">
+          <DataField>SocialSecurity</DataField>
+        </Field>
+        <Field Name="SocialSecurityFormat">
+          <DataField>SocialSecurityFormat</DataField>
+        </Field>
+        <Field Name="SocialSecurityEmployer">
+          <DataField>SocialSecurityEmployer</DataField>
+        </Field>
+        <Field Name="SocialSecurityEmployerFormat">
+          <DataField>SocialSecurityEmployerFormat</DataField>
+        </Field>
+        <Field Name="TotalCost">
+          <DataField>TotalCost</DataField>
+        </Field>
+        <Field Name="TotalCostFormat">
+          <DataField>TotalCostFormat</DataField>
+        </Field>
+        <Field Name="LumpsumAllowance">
+          <DataField>LumpsumAllowance</DataField>
+        </Field>
+        <Field Name="LumpsumAllowanceFormat">
+          <DataField>LumpsumAllowanceFormat</DataField>
+        </Field>
+        <Field Name="App1Name">
+          <DataField>App1Name</DataField>
+        </Field>
+        <Field Name="App1Date">
+          <DataField>App1Date</DataField>
+        </Field>
+        <Field Name="App1Signature">
+          <DataField>App1Signature</DataField>
+        </Field>
+        <Field Name="App2Name">
+          <DataField>App2Name</DataField>
+        </Field>
+        <Field Name="App2Date">
+          <DataField>App2Date</DataField>
+        </Field>
+        <Field Name="App2Signature">
+          <DataField>App2Signature</DataField>
+        </Field>
+        <Field Name="App3Name">
+          <DataField>App3Name</DataField>
+        </Field>
+        <Field Name="App3Date">
+          <DataField>App3Date</DataField>
+        </Field>
+        <Field Name="App3Signature">
+          <DataField>App3Signature</DataField>
+        </Field>
+        <Field Name="App4Name">
+          <DataField>App4Name</DataField>
+        </Field>
+        <Field Name="App4Date">
+          <DataField>App4Date</DataField>
+        </Field>
+        <Field Name="App4Signature">
+          <DataField>App4Signature</DataField>
+        </Field>
+        <Field Name="App5Name">
+          <DataField>App5Name</DataField>
+        </Field>
+        <Field Name="App5Date">
+          <DataField>App5Date</DataField>
+        </Field>
+        <Field Name="App5Signature">
+          <DataField>App5Signature</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompPic">
+          <DataField>CompPic</DataField>
+        </Field>
+        <Field Name="TSNo">
+          <DataField>TSNo</DataField>
+        </Field>
+        <Field Name="EmployeeNo">
+          <DataField>EmployeeNo</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+        </Field>
+        <Field Name="JobTitle">
+          <DataField>JobTitle</DataField>
+        </Field>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+        </Field>
+        <Field Name="ListofKeyTasksUndertaken">
+          <DataField>ListofKeyTasksUndertaken</DataField>
+        </Field>
+        <Field Name="DateSubmittedtoSupervisor_EmployeeTimesheetLines">
+          <DataField>DateSubmittedtoSupervisor_EmployeeTimesheetLines</DataField>
+        </Field>
+        <Field Name="DateApproved_EmployeeTimesheetLines">
+          <DataField>DateApproved_EmployeeTimesheetLines</DataField>
+        </Field>
+        <Field Name="TotalDaysWorked">
+          <DataField>TotalDaysWorked</DataField>
+        </Field>
+        <Field Name="Project">
+          <DataField>Project</DataField>
+        </Field>
+        <Field Name="IntCount">
+          <DataField>IntCount</DataField>
+        </Field>
+        <Field Name="HoursWorked">
+          <DataField>HoursWorked</DataField>
+        </Field>
+        <Field Name="HoursWorkedFormat">
+          <DataField>HoursWorkedFormat</DataField>
+        </Field>
+        <Field Name="TotalOffHours">
+          <DataField>TotalOffHours</DataField>
+        </Field>
+        <Field Name="TotalOffHoursFormat">
+          <DataField>TotalOffHoursFormat</DataField>
+        </Field>
+        <Field Name="OffdayHours">
+          <DataField>OffdayHours</DataField>
+        </Field>
+        <Field Name="OffdayHoursFormat">
+          <DataField>OffdayHoursFormat</DataField>
+        </Field>
+        <Field Name="TotalHoursWorked">
+          <DataField>TotalHoursWorked</DataField>
+        </Field>
+        <Field Name="TotalHoursWorkedFormat">
+          <DataField>TotalHoursWorkedFormat</DataField>
+        </Field>
+        <Field Name="ManagerSignature">
+          <DataField>ManagerSignature</DataField>
+        </Field>
+        <Field Name="UserSignature">
+          <DataField>UserSignature</DataField>
+        </Field>
+        <Field Name="TaskUndertaken_TImesheetTasksUndertaken">
+          <DataField>TaskUndertaken_TImesheetTasksUndertaken</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_TImesheetTasksUndertaken">
+          <DataField>ShortcutDimension2Code_TImesheetTasksUndertaken</DataField>
+        </Field>
+        <Field Name="Hours_TImesheetTasksUndertaken">
+          <DataField>Hours_TImesheetTasksUndertaken</DataField>
+        </Field>
+        <Field Name="Hours_TImesheetTasksUndertakenFormat">
+          <DataField>Hours_TImesheetTasksUndertakenFormat</DataField>
+        </Field>
+        <Field Name="LCount">
+          <DataField>LCount</DataField>
+        </Field>
+        <Field Name="TSNo_EmployeeTimesheetLedger">
+          <DataField>TSNo_EmployeeTimesheetLedger</DataField>
+        </Field>
+        <Field Name="LineNo_EmployeeTimesheetLedger">
+          <DataField>LineNo_EmployeeTimesheetLedger</DataField>
+        </Field>
+        <Field Name="Month_EmployeeTimesheetLedger">
+          <DataField>Month_EmployeeTimesheetLedger</DataField>
+        </Field>
+        <Field Name="Year_EmployeeTimesheetLedger">
+          <DataField>Year_EmployeeTimesheetLedger</DataField>
+        </Field>
+        <Field Name="DescriptionETL">
+          <DataField>DescriptionETL</DataField>
+        </Field>
+        <Field Name="DateETL">
+          <DataField>DateETL</DataField>
+        </Field>
+        <Field Name="HoursETL">
+          <DataField>HoursETL</DataField>
+        </Field>
+        <Field Name="HoursETLFormat">
+          <DataField>HoursETLFormat</DataField>
+        </Field>
+        <Field Name="NonWorkingDayETL">
+          <DataField>NonWorkingDayETL</DataField>
+        </Field>
+        <Field Name="DayTypeETL">
+          <DataField>DayTypeETL</DataField>
+        </Field>
+        <Field Name="WWDay">
+          <DataField>WWDay</DataField>
+        </Field>
+        <Field Name="IsWeekend">
+          <DataField>IsWeekend</DataField>
+        </Field>
+        <Field Name="Tasks_EmployeeTimesheetLedger">
+          <DataField>Tasks_EmployeeTimesheetLedger</DataField>
+        </Field>
+        <Field Name="OffDaysPec">
+          <DataField>OffDaysPec</DataField>
+        </Field>
+        <Field Name="OffDaysPecFormat">
+          <DataField>OffDaysPecFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

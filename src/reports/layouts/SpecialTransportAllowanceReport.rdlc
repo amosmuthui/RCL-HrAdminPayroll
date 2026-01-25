@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="CompanyPIN">
+          <DataField>CompanyPIN</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="ComapnyEmail">
+          <DataField>ComapnyEmail</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="Names">
+          <DataField>Names</DataField>
+        </Field>
+        <Field Name="PayrollPeriod">
+          <DataField>PayrollPeriod</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="StatutoryNetAmount">
+          <DataField>StatutoryNetAmount</DataField>
+        </Field>
+        <Field Name="StatutoryNetAmountFormat">
+          <DataField>StatutoryNetAmountFormat</DataField>
+        </Field>
+        <Field Name="Paye">
+          <DataField>Paye</DataField>
+        </Field>
+        <Field Name="PayeFormat">
+          <DataField>PayeFormat</DataField>
+        </Field>
+        <Field Name="SpecialTransportAllowance">
+          <DataField>SpecialTransportAllowance</DataField>
+        </Field>
+        <Field Name="SpecialTransportAllowanceFormat">
+          <DataField>SpecialTransportAllowanceFormat</DataField>
+        </Field>
+        <Field Name="SpecialTransportAllowanceArrears">
+          <DataField>SpecialTransportAllowanceArrears</DataField>
+        </Field>
+        <Field Name="SpecialTransportAllowanceArrearsFormat">
+          <DataField>SpecialTransportAllowanceArrearsFormat</DataField>
+        </Field>
+        <Field Name="Department">
+          <DataField>Department</DataField>
+        </Field>
+        <Field Name="Section">
+          <DataField>Section</DataField>
+        </Field>
+        <Field Name="Designation">
+          <DataField>Designation</DataField>
+        </Field>
+        <Field Name="App1Name">
+          <DataField>App1Name</DataField>
+        </Field>
+        <Field Name="App1Date">
+          <DataField>App1Date</DataField>
+        </Field>
+        <Field Name="App1Signature">
+          <DataField>App1Signature</DataField>
+        </Field>
+        <Field Name="App2Name">
+          <DataField>App2Name</DataField>
+        </Field>
+        <Field Name="App2Date">
+          <DataField>App2Date</DataField>
+        </Field>
+        <Field Name="App2Signature">
+          <DataField>App2Signature</DataField>
+        </Field>
+        <Field Name="App3Name">
+          <DataField>App3Name</DataField>
+        </Field>
+        <Field Name="App3Date">
+          <DataField>App3Date</DataField>
+        </Field>
+        <Field Name="App3Signature">
+          <DataField>App3Signature</DataField>
+        </Field>
+        <Field Name="App4Name">
+          <DataField>App4Name</DataField>
+        </Field>
+        <Field Name="App4Date">
+          <DataField>App4Date</DataField>
+        </Field>
+        <Field Name="App4Signature">
+          <DataField>App4Signature</DataField>
+        </Field>
+        <Field Name="App5Name">
+          <DataField>App5Name</DataField>
+        </Field>
+        <Field Name="App5Date">
+          <DataField>App5Date</DataField>
+        </Field>
+        <Field Name="App5Signature">
+          <DataField>App5Signature</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

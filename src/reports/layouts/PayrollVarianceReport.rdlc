@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Employee">
+          <DataField>No_Employee</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="DateA">
+          <DataField>DateA</DataField>
+        </Field>
+        <Field Name="SumA">
+          <DataField>SumA</DataField>
+        </Field>
+        <Field Name="SumAFormat">
+          <DataField>SumAFormat</DataField>
+        </Field>
+        <Field Name="DateB">
+          <DataField>DateB</DataField>
+        </Field>
+        <Field Name="SumB">
+          <DataField>SumB</DataField>
+        </Field>
+        <Field Name="SumBFormat">
+          <DataField>SumBFormat</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompAddress">
+          <DataField>CompAddress</DataField>
+        </Field>
+        <Field Name="CompCity">
+          <DataField>CompCity</DataField>
+        </Field>
+        <Field Name="CompPicture">
+          <DataField>CompPicture</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="Variance">
+          <DataField>Variance</DataField>
+        </Field>
+        <Field Name="VarianceFormat">
+          <DataField>VarianceFormat</DataField>
+        </Field>
+        <Field Name="GrossA">
+          <DataField>GrossA</DataField>
+        </Field>
+        <Field Name="GrossAFormat">
+          <DataField>GrossAFormat</DataField>
+        </Field>
+        <Field Name="GrossB">
+          <DataField>GrossB</DataField>
+        </Field>
+        <Field Name="GrossBFormat">
+          <DataField>GrossBFormat</DataField>
+        </Field>
+        <Field Name="GrossVariance">
+          <DataField>GrossVariance</DataField>
+        </Field>
+        <Field Name="GrossVarianceFormat">
+          <DataField>GrossVarianceFormat</DataField>
+        </Field>
+        <Field Name="PercentVariance">
+          <DataField>PercentVariance</DataField>
+        </Field>
+        <Field Name="VarName1">
+          <DataField>VarName1</DataField>
+        </Field>
+        <Field Name="VarName2">
+          <DataField>VarName2</DataField>
+        </Field>
+        <Field Name="VarName3">
+          <DataField>VarName3</DataField>
+        </Field>
+        <Field Name="VarName4">
+          <DataField>VarName4</DataField>
+        </Field>
+        <Field Name="VarName5">
+          <DataField>VarName5</DataField>
+        </Field>
+        <Field Name="VarName6">
+          <DataField>VarName6</DataField>
+        </Field>
+        <Field Name="VarName7">
+          <DataField>VarName7</DataField>
+        </Field>
+        <Field Name="VarName8">
+          <DataField>VarName8</DataField>
+        </Field>
+        <Field Name="VarName9">
+          <DataField>VarName9</DataField>
+        </Field>
+        <Field Name="VarName10">
+          <DataField>VarName10</DataField>
+        </Field>
+        <Field Name="VarName11">
+          <DataField>VarName11</DataField>
+        </Field>
+        <Field Name="VarName12">
+          <DataField>VarName12</DataField>
+        </Field>
+        <Field Name="VarName13">
+          <DataField>VarName13</DataField>
+        </Field>
+        <Field Name="VarName14">
+          <DataField>VarName14</DataField>
+        </Field>
+        <Field Name="VarName15">
+          <DataField>VarName15</DataField>
+        </Field>
+        <Field Name="VarAmount1">
+          <DataField>VarAmount1</DataField>
+        </Field>
+        <Field Name="VarAmount1Format">
+          <DataField>VarAmount1Format</DataField>
+        </Field>
+        <Field Name="VarAmount2">
+          <DataField>VarAmount2</DataField>
+        </Field>
+        <Field Name="VarAmount2Format">
+          <DataField>VarAmount2Format</DataField>
+        </Field>
+        <Field Name="VarAmount3">
+          <DataField>VarAmount3</DataField>
+        </Field>
+        <Field Name="VarAmount3Format">
+          <DataField>VarAmount3Format</DataField>
+        </Field>
+        <Field Name="VarAmount4">
+          <DataField>VarAmount4</DataField>
+        </Field>
+        <Field Name="VarAmount4Format">
+          <DataField>VarAmount4Format</DataField>
+        </Field>
+        <Field Name="VarAmount5">
+          <DataField>VarAmount5</DataField>
+        </Field>
+        <Field Name="VarAmount5Format">
+          <DataField>VarAmount5Format</DataField>
+        </Field>
+        <Field Name="VarAmount6">
+          <DataField>VarAmount6</DataField>
+        </Field>
+        <Field Name="VarAmount6Format">
+          <DataField>VarAmount6Format</DataField>
+        </Field>
+        <Field Name="VarAmount7">
+          <DataField>VarAmount7</DataField>
+        </Field>
+        <Field Name="VarAmount7Format">
+          <DataField>VarAmount7Format</DataField>
+        </Field>
+        <Field Name="VarAmount8">
+          <DataField>VarAmount8</DataField>
+        </Field>
+        <Field Name="VarAmount8Format">
+          <DataField>VarAmount8Format</DataField>
+        </Field>
+        <Field Name="VarAmount9">
+          <DataField>VarAmount9</DataField>
+        </Field>
+        <Field Name="VarAmount9Format">
+          <DataField>VarAmount9Format</DataField>
+        </Field>
+        <Field Name="VarAmount10">
+          <DataField>VarAmount10</DataField>
+        </Field>
+        <Field Name="VarAmount10Format">
+          <DataField>VarAmount10Format</DataField>
+        </Field>
+        <Field Name="VarAmount11">
+          <DataField>VarAmount11</DataField>
+        </Field>
+        <Field Name="VarAmount11Format">
+          <DataField>VarAmount11Format</DataField>
+        </Field>
+        <Field Name="VarAmount12">
+          <DataField>VarAmount12</DataField>
+        </Field>
+        <Field Name="VarAmount12Format">
+          <DataField>VarAmount12Format</DataField>
+        </Field>
+        <Field Name="VarAmount13">
+          <DataField>VarAmount13</DataField>
+        </Field>
+        <Field Name="VarAmount13Format">
+          <DataField>VarAmount13Format</DataField>
+        </Field>
+        <Field Name="VarAmount14">
+          <DataField>VarAmount14</DataField>
+        </Field>
+        <Field Name="VarAmount14Format">
+          <DataField>VarAmount14Format</DataField>
+        </Field>
+        <Field Name="VarAmount15">
+          <DataField>VarAmount15</DataField>
+        </Field>
+        <Field Name="VarAmount15Format">
+          <DataField>VarAmount15Format</DataField>
+        </Field>
+        <Field Name="Payroll_Country">
+          <DataField>Payroll_Country</DataField>
+        </Field>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
+        </Field>
+        <Field Name="PeriodTitle">
+          <DataField>PeriodTitle</DataField>
+        </Field>
+        <Field Name="SelectedCountryCurrency">
+          <DataField>SelectedCountryCurrency</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="TheCodeCaption">
+          <DataField>TheCodeCaption</DataField>
+        </Field>
+        <Field Name="AccountNoText">
+          <DataField>AccountNoText</DataField>
+        </Field>
+        <Field Name="TitleCaption">
+          <DataField>TitleCaption</DataField>
+        </Field>
+        <Field Name="Company_Name">
+          <DataField>Company_Name</DataField>
+        </Field>
+        <Field Name="Company_Picture">
+          <DataField>Company_Picture</DataField>
+        </Field>
+        <Field Name="PeriodText">
+          <DataField>PeriodText</DataField>
+        </Field>
+        <Field Name="CodeText">
+          <DataField>CodeText</DataField>
+        </Field>
+        <Field Name="DrText">
+          <DataField>DrText</DataField>
+        </Field>
+        <Field Name="CrText">
+          <DataField>CrText</DataField>
+        </Field>
+        <Field Name="AccountNoCaption">
+          <DataField>AccountNoCaption</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Debit">
+          <DataField>Debit</DataField>
+        </Field>
+        <Field Name="DebitFormat">
+          <DataField>DebitFormat</DataField>
+        </Field>
+        <Field Name="Credit">
+          <DataField>Credit</DataField>
+        </Field>
+        <Field Name="CreditFormat">
+          <DataField>CreditFormat</DataField>
+        </Field>
+        <Field Name="TheCodeDedCaption">
+          <DataField>TheCodeDedCaption</DataField>
+        </Field>
+        <Field Name="AccountNoDedCaption">
+          <DataField>AccountNoDedCaption</DataField>
+        </Field>
+        <Field Name="DescriptionDed">
+          <DataField>DescriptionDed</DataField>
+        </Field>
+        <Field Name="DebitDed">
+          <DataField>DebitDed</DataField>
+        </Field>
+        <Field Name="DebitDedFormat">
+          <DataField>DebitDedFormat</DataField>
+        </Field>
+        <Field Name="CreditDed">
+          <DataField>CreditDed</DataField>
+        </Field>
+        <Field Name="CreditDedFormat">
+          <DataField>CreditDedFormat</DataField>
+        </Field>
+        <Field Name="TheCodePenCaption">
+          <DataField>TheCodePenCaption</DataField>
+        </Field>
+        <Field Name="AccountNoPenCaption">
+          <DataField>AccountNoPenCaption</DataField>
+        </Field>
+        <Field Name="DescriptionPen">
+          <DataField>DescriptionPen</DataField>
+        </Field>
+        <Field Name="DebitPen">
+          <DataField>DebitPen</DataField>
+        </Field>
+        <Field Name="DebitPenFormat">
+          <DataField>DebitPenFormat</DataField>
+        </Field>
+        <Field Name="CreditPen">
+          <DataField>CreditPen</DataField>
+        </Field>
+        <Field Name="CreditPenFormat">
+          <DataField>CreditPenFormat</DataField>
+        </Field>
+        <Field Name="TheCodeGratCaption">
+          <DataField>TheCodeGratCaption</DataField>
+        </Field>
+        <Field Name="AccountNoGratCaption">
+          <DataField>AccountNoGratCaption</DataField>
+        </Field>
+        <Field Name="DescriptionGrat">
+          <DataField>DescriptionGrat</DataField>
+        </Field>
+        <Field Name="DebitGrat">
+          <DataField>DebitGrat</DataField>
+        </Field>
+        <Field Name="DebitGratFormat">
+          <DataField>DebitGratFormat</DataField>
+        </Field>
+        <Field Name="CreditGrat">
+          <DataField>CreditGrat</DataField>
+        </Field>
+        <Field Name="CreditGratFormat">
+          <DataField>CreditGratFormat</DataField>
+        </Field>
+        <Field Name="TheCodeGratArrCaption">
+          <DataField>TheCodeGratArrCaption</DataField>
+        </Field>
+        <Field Name="AccountNoGratArrCaption">
+          <DataField>AccountNoGratArrCaption</DataField>
+        </Field>
+        <Field Name="DescriptionGratArr">
+          <DataField>DescriptionGratArr</DataField>
+        </Field>
+        <Field Name="DebitGratArr">
+          <DataField>DebitGratArr</DataField>
+        </Field>
+        <Field Name="DebitGratArrFormat">
+          <DataField>DebitGratArrFormat</DataField>
+        </Field>
+        <Field Name="CreditGratArr">
+          <DataField>CreditGratArr</DataField>
+        </Field>
+        <Field Name="CreditGratArrFormat">
+          <DataField>CreditGratArrFormat</DataField>
+        </Field>
+        <Field Name="TheCodePenEmpCaption">
+          <DataField>TheCodePenEmpCaption</DataField>
+        </Field>
+        <Field Name="AccountNoPenEmpCaption">
+          <DataField>AccountNoPenEmpCaption</DataField>
+        </Field>
+        <Field Name="DescriptionPenEmp">
+          <DataField>DescriptionPenEmp</DataField>
+        </Field>
+        <Field Name="DebitPenEmp">
+          <DataField>DebitPenEmp</DataField>
+        </Field>
+        <Field Name="DebitPenEmpFormat">
+          <DataField>DebitPenEmpFormat</DataField>
+        </Field>
+        <Field Name="CreditPenEmp">
+          <DataField>CreditPenEmp</DataField>
+        </Field>
+        <Field Name="CreditPenEmpFormat">
+          <DataField>CreditPenEmpFormat</DataField>
+        </Field>
+        <Field Name="TheCodeGratEmpCaption">
+          <DataField>TheCodeGratEmpCaption</DataField>
+        </Field>
+        <Field Name="AccountNoGratEmpCaption">
+          <DataField>AccountNoGratEmpCaption</DataField>
+        </Field>
+        <Field Name="DescriptionGratEmp">
+          <DataField>DescriptionGratEmp</DataField>
+        </Field>
+        <Field Name="DebitGratEmp">
+          <DataField>DebitGratEmp</DataField>
+        </Field>
+        <Field Name="DebitGratEmpFormat">
+          <DataField>DebitGratEmpFormat</DataField>
+        </Field>
+        <Field Name="CreditGratEmp">
+          <DataField>CreditGratEmp</DataField>
+        </Field>
+        <Field Name="CreditGratEmpFormat">
+          <DataField>CreditGratEmpFormat</DataField>
+        </Field>
+        <Field Name="TheCodeGratArrEmpCaption">
+          <DataField>TheCodeGratArrEmpCaption</DataField>
+        </Field>
+        <Field Name="AccountNoGratArrEmpCaption">
+          <DataField>AccountNoGratArrEmpCaption</DataField>
+        </Field>
+        <Field Name="DescriptionGratArrEmp">
+          <DataField>DescriptionGratArrEmp</DataField>
+        </Field>
+        <Field Name="DebitGratArrEmp">
+          <DataField>DebitGratArrEmp</DataField>
+        </Field>
+        <Field Name="DebitGratArrEmpFormat">
+          <DataField>DebitGratArrEmpFormat</DataField>
+        </Field>
+        <Field Name="CreditGratArrEmp">
+          <DataField>CreditGratArrEmp</DataField>
+        </Field>
+        <Field Name="CreditGratArrEmpFormat">
+          <DataField>CreditGratArrEmpFormat</DataField>
+        </Field>
+        <Field Name="TheCodePenEmpCrCaption">
+          <DataField>TheCodePenEmpCrCaption</DataField>
+        </Field>
+        <Field Name="AccountNoPenEmpCrCaption">
+          <DataField>AccountNoPenEmpCrCaption</DataField>
+        </Field>
+        <Field Name="DescriptionPenCrEmp">
+          <DataField>DescriptionPenCrEmp</DataField>
+        </Field>
+        <Field Name="DebitPenEmpCr">
+          <DataField>DebitPenEmpCr</DataField>
+        </Field>
+        <Field Name="DebitPenEmpCrFormat">
+          <DataField>DebitPenEmpCrFormat</DataField>
+        </Field>
+        <Field Name="CreditPenEmpCr">
+          <DataField>CreditPenEmpCr</DataField>
+        </Field>
+        <Field Name="CreditPenEmpCrFormat">
+          <DataField>CreditPenEmpCrFormat</DataField>
+        </Field>
+        <Field Name="TheCodeGratEmpCrCaption">
+          <DataField>TheCodeGratEmpCrCaption</DataField>
+        </Field>
+        <Field Name="AccountNoGratEmpCrCaption">
+          <DataField>AccountNoGratEmpCrCaption</DataField>
+        </Field>
+        <Field Name="DescriptionGratEmpCr">
+          <DataField>DescriptionGratEmpCr</DataField>
+        </Field>
+        <Field Name="DebitGratEmpCr">
+          <DataField>DebitGratEmpCr</DataField>
+        </Field>
+        <Field Name="DebitGratEmpCrFormat">
+          <DataField>DebitGratEmpCrFormat</DataField>
+        </Field>
+        <Field Name="CreditGratEmpCr">
+          <DataField>CreditGratEmpCr</DataField>
+        </Field>
+        <Field Name="CreditGratEmpCrFormat">
+          <DataField>CreditGratEmpCrFormat</DataField>
+        </Field>
+        <Field Name="TheCodeGratArrEmpCrCaption">
+          <DataField>TheCodeGratArrEmpCrCaption</DataField>
+        </Field>
+        <Field Name="AccountNoGratArrEmpCrCaption">
+          <DataField>AccountNoGratArrEmpCrCaption</DataField>
+        </Field>
+        <Field Name="DescriptionGratArrEmpCr">
+          <DataField>DescriptionGratArrEmpCr</DataField>
+        </Field>
+        <Field Name="DebitGratArrEmpCr">
+          <DataField>DebitGratArrEmpCr</DataField>
+        </Field>
+        <Field Name="DebitGratArrEmpCrFormat">
+          <DataField>DebitGratArrEmpCrFormat</DataField>
+        </Field>
+        <Field Name="CreditGratArrEmpCr">
+          <DataField>CreditGratArrEmpCr</DataField>
+        </Field>
+        <Field Name="CreditGratArrEmpCrFormat">
+          <DataField>CreditGratArrEmpCrFormat</DataField>
+        </Field>
+        <Field Name="GrandTotalCaption">
+          <DataField>GrandTotalCaption</DataField>
+        </Field>
+        <Field Name="TotalDebits">
+          <DataField>TotalDebits</DataField>
+        </Field>
+        <Field Name="TotalDebitsFormat">
+          <DataField>TotalDebitsFormat</DataField>
+        </Field>
+        <Field Name="TotalCredits">
+          <DataField>TotalCredits</DataField>
+        </Field>
+        <Field Name="TotalCreditsFormat">
+          <DataField>TotalCreditsFormat</DataField>
+        </Field>
+        <Field Name="TotalNetPay">
+          <DataField>TotalNetPay</DataField>
+        </Field>
+        <Field Name="TotalNetPayFormat">
+          <DataField>TotalNetPayFormat</DataField>
+        </Field>
+        <Field Name="NetPayAccountNo">
+          <DataField>NetPayAccountNo</DataField>
+        </Field>
+        <Field Name="NetDescription">
+          <DataField>NetDescription</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

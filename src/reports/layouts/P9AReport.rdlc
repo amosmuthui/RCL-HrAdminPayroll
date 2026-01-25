@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="First_Name________Middle_Name_">
+          <DataField>First_Name________Middle_Name_</DataField>
+        </Field>
+        <Field Name="Employee__Last_Name_">
+          <DataField>Employee__Last_Name_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="Company_Name">
+          <DataField>Company_Name</DataField>
+        </Field>
+        <Field Name="Company_Pin">
+          <DataField>Company_Pin</DataField>
+        </Field>
+        <Field Name="V30__">
+          <DataField>V30__</DataField>
+        </Field>
+        <Field Name="Actual_">
+          <DataField>Actual_</DataField>
+        </Field>
+        <Field Name="Fixed_">
+          <DataField>Fixed_</DataField>
+        </Field>
+        <Field Name="Employee__PIN_Number_">
+          <DataField>Employee__PIN_Number_</DataField>
+        </Field>
+        <Field Name="FORMAT_StringDate_0___year4___">
+          <DataField>FORMAT_StringDate_0___year4___</DataField>
+        </Field>
+        <Field Name="CoPin">
+          <DataField>CoPin</DataField>
+        </Field>
+        <Field Name="Employee_Employee__No__">
+          <DataField>Employee_Employee__No__</DataField>
+        </Field>
+        <Field Name="Employers_Name_Caption">
+          <DataField>Employers_Name_Caption</DataField>
+        </Field>
+        <Field Name="Employee_s_Main_Name_Caption">
+          <DataField>Employee_s_Main_Name_Caption</DataField>
+        </Field>
+        <Field Name="Employee_s_Other_Names_Caption">
+          <DataField>Employee_s_Other_Names_Caption</DataField>
+        </Field>
+        <Field Name="Employers_PIN_Caption">
+          <DataField>Employers_PIN_Caption</DataField>
+        </Field>
+        <Field Name="Employee_s_PIN_Caption">
+          <DataField>Employee_s_PIN_Caption</DataField>
+        </Field>
+        <Field Name="MonthCaption">
+          <DataField>MonthCaption</DataField>
+        </Field>
+        <Field Name="Gross_SalaryCaption">
+          <DataField>Gross_SalaryCaption</DataField>
+        </Field>
+        <Field Name="BenefitsCaption">
+          <DataField>BenefitsCaption</DataField>
+        </Field>
+        <Field Name="QuartersCaption">
+          <DataField>QuartersCaption</DataField>
+        </Field>
+        <Field Name="Total_A_B_CCaption">
+          <DataField>Total_A_B_CCaption</DataField>
+        </Field>
+        <Field Name="Defined_Contribution_Retr__SchemeCaption">
+          <DataField>Defined_Contribution_Retr__SchemeCaption</DataField>
+        </Field>
+        <Field Name="Taxable_AmountCaption">
+          <DataField>Taxable_AmountCaption</DataField>
+        </Field>
+        <Field Name="Personal_ReliefCaption">
+          <DataField>Personal_ReliefCaption</DataField>
+        </Field>
+        <Field Name="P_A_Y_E_TAXCaption">
+          <DataField>P_A_Y_E_TAXCaption</DataField>
+        </Field>
+        <Field Name="KENYA_REVENUE_AUTHORITYCaption">
+          <DataField>KENYA_REVENUE_AUTHORITYCaption</DataField>
+        </Field>
+        <Field Name="INCOME_TAX_DEPARTMENTCaption">
+          <DataField>INCOME_TAX_DEPARTMENTCaption</DataField>
+        </Field>
+        <Field Name="INCOME_TAX_DEDUCTION_CARD_YEAR_Caption">
+          <DataField>INCOME_TAX_DEDUCTION_CARD_YEAR_Caption</DataField>
+        </Field>
+        <Field Name="Tax_ChargedCaption">
+          <DataField>Tax_ChargedCaption</DataField>
+        </Field>
+        <Field Name="Owner_OccupiedCaption">
+          <DataField>Owner_OccupiedCaption</DataField>
+        </Field>
+        <Field Name="Retr__Contribution__Caption">
+          <DataField>Retr__Contribution__Caption</DataField>
+        </Field>
+        <Field Name="ACaption">
+          <DataField>ACaption</DataField>
+        </Field>
+        <Field Name="BCaption">
+          <DataField>BCaption</DataField>
+        </Field>
+        <Field Name="CCaption">
+          <DataField>CCaption</DataField>
+        </Field>
+        <Field Name="DCaption">
+          <DataField>DCaption</DataField>
+        </Field>
+        <Field Name="F__Standard_Amount_Caption">
+          <DataField>F__Standard_Amount_Caption</DataField>
+        </Field>
+        <Field Name="G___Lowest_of_E_F_Caption">
+          <DataField>G___Lowest_of_E_F_Caption</DataField>
+        </Field>
+        <Field Name="HCaption">
+          <DataField>HCaption</DataField>
+        </Field>
+        <Field Name="JCaption">
+          <DataField>JCaption</DataField>
+        </Field>
+        <Field Name="KCaption">
+          <DataField>KCaption</DataField>
+        </Field>
+        <Field Name="LCaption">
+          <DataField>LCaption</DataField>
+        </Field>
+        <Field Name="MCaption">
+          <DataField>MCaption</DataField>
+        </Field>
+        <Field Name="ECaption">
+          <DataField>ECaption</DataField>
+        </Field>
+        <Field Name="IMPORTANT">
+          <DataField>IMPORTANT</DataField>
+        </Field>
+        <Field Name="UseP9A_a">
+          <DataField>UseP9A_a</DataField>
+        </Field>
+        <Field Name="UseP9A_b">
+          <DataField>UseP9A_b</DataField>
+        </Field>
+        <Field Name="Two_a">
+          <DataField>Two_a</DataField>
+        </Field>
+        <Field Name="Two_b_1">
+          <DataField>Two_b_1</DataField>
+        </Field>
+        <Field Name="Two_b_2">
+          <DataField>Two_b_2</DataField>
+        </Field>
+        <Field Name="CompletionByEmployerLbl">
+          <DataField>CompletionByEmployerLbl</DataField>
+        </Field>
+        <Field Name="Use_P9A_1">
+          <DataField>Use_P9A_1</DataField>
+        </Field>
+        <Field Name="b_Attach">
+          <DataField>b_Attach</DataField>
+        </Field>
+        <Field Name="InterestCaption">
+          <DataField>InterestCaption</DataField>
+        </Field>
+        <Field Name="Column_D_GCaption">
+          <DataField>Column_D_GCaption</DataField>
+        </Field>
+        <Field Name="Occupied_InterestCaption">
+          <DataField>Occupied_InterestCaption</DataField>
+        </Field>
+        <Field Name="Non_CashCaption">
+          <DataField>Non_CashCaption</DataField>
+        </Field>
+        <Field Name="Value_OfCaption">
+          <DataField>Value_OfCaption</DataField>
+        </Field>
+        <Field Name="Personal_File_No_Caption">
+          <DataField>Personal_File_No_Caption</DataField>
+        </Field>
+        <Field Name="Insurance_ReliefCaption">
+          <DataField>Insurance_ReliefCaption</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_Name">
+          <DataField>Payroll_PeriodX1_Name</DataField>
+        </Field>
+        <Field Name="BenefitsVar">
+          <DataField>BenefitsVar</DataField>
+        </Field>
+        <Field Name="BenefitsVarFormat">
+          <DataField>BenefitsVarFormat</DataField>
+        </Field>
+        <Field Name="QuartersVar">
+          <DataField>QuartersVar</DataField>
+        </Field>
+        <Field Name="QuartersVarFormat">
+          <DataField>QuartersVarFormat</DataField>
+        </Field>
+        <Field Name="RetirementVar">
+          <DataField>RetirementVar</DataField>
+        </Field>
+        <Field Name="RetirementVarFormat">
+          <DataField>RetirementVarFormat</DataField>
+        </Field>
+        <Field Name="TaxableAmount1">
+          <DataField>TaxableAmount1</DataField>
+        </Field>
+        <Field Name="TaxableAmount1Format">
+          <DataField>TaxableAmount1Format</DataField>
+        </Field>
+        <Field Name="Relief">
+          <DataField>Relief</DataField>
+        </Field>
+        <Field Name="ReliefFormat">
+          <DataField>ReliefFormat</DataField>
+        </Field>
+        <Field Name="InsuranceRelief">
+          <DataField>InsuranceRelief</DataField>
+        </Field>
+        <Field Name="InsuranceReliefFormat">
+          <DataField>InsuranceReliefFormat</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE__">
+          <DataField>ABS_Employee__Cumm__PAYE__</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE__Format">
+          <DataField>ABS_Employee__Cumm__PAYE__Format</DataField>
+        </Field>
+        <Field Name="PensionLimit">
+          <DataField>PensionLimit</DataField>
+        </Field>
+        <Field Name="PensionLimitFormat">
+          <DataField>PensionLimitFormat</DataField>
+        </Field>
+        <Field Name="Employee__Total_Allowances_">
+          <DataField>Employee__Total_Allowances_</DataField>
+        </Field>
+        <Field Name="Employee__Total_Allowances_Format">
+          <DataField>Employee__Total_Allowances_Format</DataField>
+        </Field>
+        <Field Name="Employee__Taxable_Allowance__Employee__Cumm__Basic_Pay__BenefitsVar_QuartersVar">
+          <DataField>Employee__Taxable_Allowance__Employee__Cumm__Basic_Pay__BenefitsVar_QuartersVar</DataField>
+        </Field>
+        <Field Name="Employee__Taxable_Allowance__Employee__Cumm__Basic_Pay__BenefitsVar_QuartersVarFormat">
+          <DataField>Employee__Taxable_Allowance__Employee__Cumm__Basic_Pay__BenefitsVar_QuartersVarFormat</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Relief_InsuranceRelief">
+          <DataField>ABS_Employee__Cumm__PAYE___Relief_InsuranceRelief</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Relief_InsuranceReliefFormat">
+          <DataField>ABS_Employee__Cumm__PAYE___Relief_InsuranceReliefFormat</DataField>
+        </Field>
+        <Field Name="ABS_OccupierVar_">
+          <DataField>ABS_OccupierVar_</DataField>
+        </Field>
+        <Field Name="ABS_OccupierVar_Format">
+          <DataField>ABS_OccupierVar_Format</DataField>
+        </Field>
+        <Field Name="V30PerPension_">
+          <DataField>V30PerPension_</DataField>
+        </Field>
+        <Field Name="V30PerPension_Format">
+          <DataField>V30PerPension_Format</DataField>
+        </Field>
+        <Field Name="ABS_DefinedContrMin__ABS_OccupierVar_">
+          <DataField>ABS_DefinedContrMin__ABS_OccupierVar_</DataField>
+        </Field>
+        <Field Name="ABS_DefinedContrMin__ABS_OccupierVar_Format">
+          <DataField>ABS_DefinedContrMin__ABS_OccupierVar_Format</DataField>
+        </Field>
+        <Field Name="TotBasic">
+          <DataField>TotBasic</DataField>
+        </Field>
+        <Field Name="TotBasicFormat">
+          <DataField>TotBasicFormat</DataField>
+        </Field>
+        <Field Name="TotalBenefits">
+          <DataField>TotalBenefits</DataField>
+        </Field>
+        <Field Name="TotalBenefitsFormat">
+          <DataField>TotalBenefitsFormat</DataField>
+        </Field>
+        <Field Name="TotQuarter">
+          <DataField>TotQuarter</DataField>
+        </Field>
+        <Field Name="TotQuarterFormat">
+          <DataField>TotQuarterFormat</DataField>
+        </Field>
+        <Field Name="TotGross">
+          <DataField>TotGross</DataField>
+        </Field>
+        <Field Name="TotGrossFormat">
+          <DataField>TotGrossFormat</DataField>
+        </Field>
+        <Field Name="V30PerPension__Control188">
+          <DataField>V30PerPension__Control188</DataField>
+        </Field>
+        <Field Name="V30PerPension__Control188Format">
+          <DataField>V30PerPension__Control188Format</DataField>
+        </Field>
+        <Field Name="ABS_RetirementVar_">
+          <DataField>ABS_RetirementVar_</DataField>
+        </Field>
+        <Field Name="ABS_RetirementVar_Format">
+          <DataField>ABS_RetirementVar_Format</DataField>
+        </Field>
+        <Field Name="TaxableAmount_Control196">
+          <DataField>TaxableAmount_Control196</DataField>
+        </Field>
+        <Field Name="TaxableAmount_Control196Format">
+          <DataField>TaxableAmount_Control196Format</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Relief_InsuranceRelief_Control198">
+          <DataField>ABS_Employee__Cumm__PAYE___Relief_InsuranceRelief_Control198</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Relief_InsuranceRelief_Control198Format">
+          <DataField>ABS_Employee__Cumm__PAYE___Relief_InsuranceRelief_Control198Format</DataField>
+        </Field>
+        <Field Name="Relief_Control200">
+          <DataField>Relief_Control200</DataField>
+        </Field>
+        <Field Name="Relief_Control200Format">
+          <DataField>Relief_Control200Format</DataField>
+        </Field>
+        <Field Name="InsuranceRelief_Control202">
+          <DataField>InsuranceRelief_Control202</DataField>
+        </Field>
+        <Field Name="InsuranceRelief_Control202Format">
+          <DataField>InsuranceRelief_Control202Format</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Control204">
+          <DataField>ABS_Employee__Cumm__PAYE___Control204</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Control204Format">
+          <DataField>ABS_Employee__Cumm__PAYE___Control204Format</DataField>
+        </Field>
+        <Field Name="OccupierVar">
+          <DataField>OccupierVar</DataField>
+        </Field>
+        <Field Name="OccupierVarFormat">
+          <DataField>OccupierVarFormat</DataField>
+        </Field>
+        <Field Name="TaxableAmount">
+          <DataField>TaxableAmount</DataField>
+        </Field>
+        <Field Name="TaxableAmountFormat">
+          <DataField>TaxableAmountFormat</DataField>
+        </Field>
+        <Field Name="TotRet">
+          <DataField>TotRet</DataField>
+        </Field>
+        <Field Name="TotRetFormat">
+          <DataField>TotRetFormat</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Control164">
+          <DataField>ABS_Employee__Cumm__PAYE___Control164</DataField>
+        </Field>
+        <Field Name="ABS_Employee__Cumm__PAYE___Control164Format">
+          <DataField>ABS_Employee__Cumm__PAYE___Control164Format</DataField>
+        </Field>
+        <Field Name="TaxableAmount_Control166">
+          <DataField>TaxableAmount_Control166</DataField>
+        </Field>
+        <Field Name="TaxableAmount_Control166Format">
+          <DataField>TaxableAmount_Control166Format</DataField>
+        </Field>
+        <Field Name="P9A_">
+          <DataField>P9A_</DataField>
+        </Field>
+        <Field Name="PensionLimit_Control1000000000">
+          <DataField>PensionLimit_Control1000000000</DataField>
+        </Field>
+        <Field Name="PensionLimit_Control1000000000Format">
+          <DataField>PensionLimit_Control1000000000Format</DataField>
+        </Field>
+        <Field Name="CERTIFICATE_OF_PAY_AND_TAXCaption">
+          <DataField>CERTIFICATE_OF_PAY_AND_TAXCaption</DataField>
+        </Field>
+        <Field Name="DataItem137">
+          <DataField>DataItem137</DataField>
+        </Field>
+        <Field Name="DataItem138">
+          <DataField>DataItem138</DataField>
+        </Field>
+        <Field Name="DataItem139">
+          <DataField>DataItem139</DataField>
+        </Field>
+        <Field Name="DataItem140">
+          <DataField>DataItem140</DataField>
+        </Field>
+        <Field Name="NAMES_OF_MORTGAGE_FINANCIAL_INSTITUTIONCaption">
+          <DataField>NAMES_OF_MORTGAGE_FINANCIAL_INSTITUTIONCaption</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption">
+          <DataField>EmptyStringCaption</DataField>
+        </Field>
+        <Field Name="DataItem146">
+          <DataField>DataItem146</DataField>
+        </Field>
+        <Field Name="DataItem147">
+          <DataField>DataItem147</DataField>
+        </Field>
+        <Field Name="TOTALSCaption">
+          <DataField>TOTALSCaption</DataField>
+        </Field>
+        <Field Name="V1__Date_employee_commenced_if_during_the_year_______________________________________________Caption">
+          <DataField>V1__Date_employee_commenced_if_during_the_year_______________________________________________Caption</DataField>
+        </Field>
+        <Field Name="Name_and_address_of_old_employer__________________________________________________________________Caption">
+          <DataField>Name_and_address_of_old_employer__________________________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="DataItem33">
+          <DataField>DataItem33</DataField>
+        </Field>
+        <Field Name="Name_and_address_of_new_employer_________________________________________________________________Caption">
+          <DataField>Name_and_address_of_new_employer_________________________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="V3__Where_housing_is_provided_State_monthly_rent______________________________________________Caption">
+          <DataField>V3__Where_housing_is_provided_State_monthly_rent______________________________________________Caption</DataField>
+        </Field>
+        <Field Name="DataItem37">
+          <DataField>DataItem37</DataField>
+        </Field>
+        <Field Name="YearCaption">
+          <DataField>YearCaption</DataField>
+        </Field>
+        <Field Name="Amount_Kenya_Pounds_Caption">
+          <DataField>Amount_Kenya_Pounds_Caption</DataField>
+        </Field>
+        <Field Name="Tax__Shs_Caption">
+          <DataField>Tax__Shs_Caption</DataField>
+        </Field>
+        <Field Name="Reference_No________________________________________________________Caption">
+          <DataField>Reference_No________________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="TOTAL_TAX__COL_M__KshsCaption">
+          <DataField>TOTAL_TAX__COL_M__KshsCaption</DataField>
+        </Field>
+        <Field Name="TOTAL_CHARGEABLE_PAY__COL_H__KshsCaption">
+          <DataField>TOTAL_CHARGEABLE_PAY__COL_H__KshsCaption</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_Starting_Date">
+          <DataField>Payroll_PeriodX1_Starting_Date</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_P_A_Y_E">
+          <DataField>Payroll_PeriodX1_P_A_Y_E</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_P_A_Y_EFormat">
+          <DataField>Payroll_PeriodX1_P_A_Y_EFormat</DataField>
+        </Field>
+        <Field Name="EarningsX1_Description">
+          <DataField>EarningsX1_Description</DataField>
+        </Field>
+        <Field Name="EarningsX1__Total_Amount_">
+          <DataField>EarningsX1__Total_Amount_</DataField>
+        </Field>
+        <Field Name="EarningsX1__Total_Amount_Format">
+          <DataField>EarningsX1__Total_Amount_Format</DataField>
+        </Field>
+        <Field Name="EarningsX1_Counter">
+          <DataField>EarningsX1_Counter</DataField>
+        </Field>
+        <Field Name="EarningsX1__Flat_Amount_">
+          <DataField>EarningsX1__Flat_Amount_</DataField>
+        </Field>
+        <Field Name="EarningsX1__Flat_Amount_Format">
+          <DataField>EarningsX1__Flat_Amount_Format</DataField>
+        </Field>
+        <Field Name="Numb">
+          <DataField>Numb</DataField>
+        </Field>
+        <Field Name="NumbFormat">
+          <DataField>NumbFormat</DataField>
+        </Field>
+        <Field Name="EmployeeBenefits">
+          <DataField>EmployeeBenefits</DataField>
+        </Field>
+        <Field Name="EmployeeBenefitsFormat">
+          <DataField>EmployeeBenefitsFormat</DataField>
+        </Field>
+        <Field Name="P9A__Control113">
+          <DataField>P9A__Control113</DataField>
+        </Field>
+        <Field Name="ITEMCaption">
+          <DataField>ITEMCaption</DataField>
+        </Field>
+        <Field Name="NO_Caption">
+          <DataField>NO_Caption</DataField>
+        </Field>
+        <Field Name="RATECaption">
+          <DataField>RATECaption</DataField>
+        </Field>
+        <Field Name="NO__OF_MONTHSCaption">
+          <DataField>NO__OF_MONTHSCaption</DataField>
+        </Field>
+        <Field Name="TOTAL_AMOUNT_K__shs_Caption">
+          <DataField>TOTAL_AMOUNT_K__shs_Caption</DataField>
+        </Field>
+        <Field Name="CALCULATION_OF_BENEFITSCaption">
+          <DataField>CALCULATION_OF_BENEFITSCaption</DataField>
+        </Field>
+        <Field Name="XCaption">
+          <DataField>XCaption</DataField>
+        </Field>
+        <Field Name="TOTAL_BENEFIT_IN_YEARCaption">
+          <DataField>TOTAL_BENEFIT_IN_YEARCaption</DataField>
+        </Field>
+        <Field Name="DataItem171">
+          <DataField>DataItem171</DataField>
+        </Field>
+        <Field Name="LOW_INTERES_RATE_BELOW_PRESCRIBED_RATE_OF__15___PER_CENT_Caption">
+          <DataField>LOW_INTERES_RATE_BELOW_PRESCRIBED_RATE_OF__15___PER_CENT_Caption</DataField>
+        </Field>
+        <Field Name="DataItem173">
+          <DataField>DataItem173</DataField>
+        </Field>
+        <Field Name="DataItem174">
+          <DataField>DataItem174</DataField>
+        </Field>
+        <Field Name="MOTOR_CARSCaption">
+          <DataField>MOTOR_CARSCaption</DataField>
+        </Field>
+        <Field Name="Upto_1500cCaption">
+          <DataField>Upto_1500cCaption</DataField>
+        </Field>
+        <Field Name="V1501cc_1750ccCaption">
+          <DataField>V1501cc_1750ccCaption</DataField>
+        </Field>
+        <Field Name="V1751cc_2000cCaption">
+          <DataField>V1751cc_2000cCaption</DataField>
+        </Field>
+        <Field Name="Over_3000cCaption">
+          <DataField>Over_3000cCaption</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption_Control209">
+          <DataField>EmptyStringCaption_Control209</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption_Control210">
+          <DataField>EmptyStringCaption_Control210</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption_Control211">
+          <DataField>EmptyStringCaption_Control211</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption_Control213">
+          <DataField>EmptyStringCaption_Control213</DataField>
+        </Field>
+        <Field Name="If_this_amount_does_not_agree_with_total_of_Col__b_overleaf__attach_explanation_Caption">
+          <DataField>If_this_amount_does_not_agree_with_total_of_Col__b_overleaf__attach_explanation_Caption</DataField>
+        </Field>
+        <Field Name="FOR_PICK_UPS__PANEL_VANS_AND_LAND_ROVERS_REFER_TO_APPENDIX_5_OF_EMPLOYERS_GUIDE_Caption">
+          <DataField>FOR_PICK_UPS__PANEL_VANS_AND_LAND_ROVERS_REFER_TO_APPENDIX_5_OF_EMPLOYERS_GUIDE_Caption</DataField>
+        </Field>
+        <Field Name="DataItem216">
+          <DataField>DataItem216</DataField>
+        </Field>
+        <Field Name="PRESCRIBED_RATE___1996___1__per_month_of_the_initial_cost_of_the_vehicle___Caption">
+          <DataField>PRESCRIBED_RATE___1996___1__per_month_of_the_initial_cost_of_the_vehicle___Caption</DataField>
+        </Field>
+        <Field Name="V2001cc_3000ccCaption">
+          <DataField>V2001cc_3000ccCaption</DataField>
+        </Field>
+        <Field Name="V1997___1_5__per_month_of_the_initial_cost_of_the_vehicle___Caption">
+          <DataField>V1997___1_5__per_month_of_the_initial_cost_of_the_vehicle___Caption</DataField>
+        </Field>
+        <Field Name="V1998_et_seq____2_0__per_month_of_the_initial_cost_of_the_vehicle___Caption">
+          <DataField>V1998_et_seq____2_0__per_month_of_the_initial_cost_of_the_vehicle___Caption</DataField>
+        </Field>
+        <Field Name="EmptyStringCaption_Control224">
+          <DataField>EmptyStringCaption_Control224</DataField>
+        </Field>
+        <Field Name="KshsCaption">
+          <DataField>KshsCaption</DataField>
+        </Field>
+        <Field Name="EarningsX1_Code">
+          <DataField>EarningsX1_Code</DataField>
+        </Field>
+        <Field Name="EarningsX1_Employee_Filter">
+          <DataField>EarningsX1_Employee_Filter</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

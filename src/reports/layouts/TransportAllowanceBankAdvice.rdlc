@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Serial_EmployeePayrollL">
+          <DataField>Serial_EmployeePayrollL</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="EmpNo">
+          <DataField>EmpNo</DataField>
+        </Field>
+        <Field Name="Names">
+          <DataField>Names</DataField>
+        </Field>
+        <Field Name="Designation">
+          <DataField>Designation</DataField>
+        </Field>
+        <Field Name="BankName_EmployeePayrollL">
+          <DataField>BankName_EmployeePayrollL</DataField>
+        </Field>
+        <Field Name="BankBrachName_EmployeePayrollL">
+          <DataField>BankBrachName_EmployeePayrollL</DataField>
+        </Field>
+        <Field Name="BankAccountNo_EmployeePayrollL">
+          <DataField>BankAccountNo_EmployeePayrollL</DataField>
+        </Field>
+        <Field Name="IBAN">
+          <DataField>IBAN</DataField>
+        </Field>
+        <Field Name="Payroll_Country">
+          <DataField>Payroll_Country</DataField>
+        </Field>
+        <Field Name="Bank_Country">
+          <DataField>Bank_Country</DataField>
+        </Field>
+        <Field Name="SWIFT_Code">
+          <DataField>SWIFT_Code</DataField>
+        </Field>
+        <Field Name="Sort_Code">
+          <DataField>Sort_Code</DataField>
+        </Field>
+        <Field Name="Indicatif">
+          <DataField>Indicatif</DataField>
+        </Field>
+        <Field Name="Code_B_I_C_">
+          <DataField>Code_B_I_C_</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompAddress">
+          <DataField>CompAddress</DataField>
+        </Field>
+        <Field Name="CompCity">
+          <DataField>CompCity</DataField>
+        </Field>
+        <Field Name="CompPicture">
+          <DataField>CompPicture</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="BankName">
+          <DataField>BankName</DataField>
+        </Field>
+        <Field Name="NetPay">
+          <DataField>NetPay</DataField>
+        </Field>
+        <Field Name="NetPayFormat">
+          <DataField>NetPayFormat</DataField>
+        </Field>
+        <Field Name="OutputCurrency">
+          <DataField>OutputCurrency</DataField>
+        </Field>
+        <Field Name="ShowBranchDetails">
+          <DataField>ShowBranchDetails</DataField>
+        </Field>
+        <Field Name="ShowIndicatiffBic">
+          <DataField>ShowIndicatiffBic</DataField>
+        </Field>
+        <Field Name="App1Name">
+          <DataField>App1Name</DataField>
+        </Field>
+        <Field Name="App1Date">
+          <DataField>App1Date</DataField>
+        </Field>
+        <Field Name="App1Signature">
+          <DataField>App1Signature</DataField>
+        </Field>
+        <Field Name="App2Name">
+          <DataField>App2Name</DataField>
+        </Field>
+        <Field Name="App2Date">
+          <DataField>App2Date</DataField>
+        </Field>
+        <Field Name="App2Signature">
+          <DataField>App2Signature</DataField>
+        </Field>
+        <Field Name="App3Name">
+          <DataField>App3Name</DataField>
+        </Field>
+        <Field Name="App3Date">
+          <DataField>App3Date</DataField>
+        </Field>
+        <Field Name="App3Signature">
+          <DataField>App3Signature</DataField>
+        </Field>
+        <Field Name="App4Name">
+          <DataField>App4Name</DataField>
+        </Field>
+        <Field Name="App4Date">
+          <DataField>App4Date</DataField>
+        </Field>
+        <Field Name="App4Signature">
+          <DataField>App4Signature</DataField>
+        </Field>
+        <Field Name="App5Name">
+          <DataField>App5Name</DataField>
+        </Field>
+        <Field Name="App5Date">
+          <DataField>App5Date</DataField>
+        </Field>
+        <Field Name="App5Signature">
+          <DataField>App5Signature</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

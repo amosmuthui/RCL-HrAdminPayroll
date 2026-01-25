@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Employee">
+          <DataField>No_Employee</DataField>
+        </Field>
+        <Field Name="Initials_Employee">
+          <DataField>Initials_Employee</DataField>
+        </Field>
+        <Field Name="GlobalDimension2Code_Employee">
+          <DataField>GlobalDimension2Code_Employee</DataField>
+        </Field>
+        <Field Name="FullName_Employee">
+          <DataField>FullName_Employee</DataField>
+        </Field>
+        <Field Name="Names">
+          <DataField>Names</DataField>
+        </Field>
+        <Field Name="JobTitle_Employee">
+          <DataField>JobTitle_Employee</DataField>
+        </Field>
+        <Field Name="ContractType_Employee">
+          <DataField>ContractType_Employee</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="PIN">
+          <DataField>PIN</DataField>
+        </Field>
+        <Field Name="CompAddress">
+          <DataField>CompAddress</DataField>
+        </Field>
+        <Field Name="CompCity">
+          <DataField>CompCity</DataField>
+        </Field>
+        <Field Name="CompPicture">
+          <DataField>CompPicture</DataField>
+        </Field>
+        <Field Name="PayrollProcessed">
+          <DataField>PayrollProcessed</DataField>
+        </Field>
+        <Field Name="OtherContributionVer2">
+          <DataField>OtherContributionVer2</DataField>
+        </Field>
+        <Field Name="OtherContributionVer2Format">
+          <DataField>OtherContributionVer2Format</DataField>
+        </Field>
+        <Field Name="OtherAllowances">
+          <DataField>OtherAllowances</DataField>
+        </Field>
+        <Field Name="OtherAllowancesFormat">
+          <DataField>OtherAllowancesFormat</DataField>
+        </Field>
+        <Field Name="OtherContribution">
+          <DataField>OtherContribution</DataField>
+        </Field>
+        <Field Name="OtherContributionFormat">
+          <DataField>OtherContributionFormat</DataField>
+        </Field>
+        <Field Name="Allowances">
+          <DataField>Allowances</DataField>
+        </Field>
+        <Field Name="AllowancesFormat">
+          <DataField>AllowancesFormat</DataField>
+        </Field>
+        <Field Name="GrossAmount">
+          <DataField>GrossAmount</DataField>
+        </Field>
+        <Field Name="GrossAmountFormat">
+          <DataField>GrossAmountFormat</DataField>
+        </Field>
+        <Field Name="BasicPay">
+          <DataField>BasicPay</DataField>
+        </Field>
+        <Field Name="BasicPayFormat">
+          <DataField>BasicPayFormat</DataField>
+        </Field>
+        <Field Name="NetPay">
+          <DataField>NetPay</DataField>
+        </Field>
+        <Field Name="NetPayFormat">
+          <DataField>NetPayFormat</DataField>
+        </Field>
+        <Field Name="Paye_PayrollTrans">
+          <DataField>Paye_PayrollTrans</DataField>
+        </Field>
+        <Field Name="Deductions">
+          <DataField>Deductions</DataField>
+        </Field>
+        <Field Name="DeductionsFormat">
+          <DataField>DeductionsFormat</DataField>
+        </Field>
+        <Field Name="IsNHIF">
+          <DataField>IsNHIF</DataField>
+        </Field>
+        <Field Name="IsHELB">
+          <DataField>IsHELB</DataField>
+        </Field>
+        <Field Name="IsNSSF">
+          <DataField>IsNSSF</DataField>
+        </Field>
+        <Field Name="IsOther">
+          <DataField>IsOther</DataField>
+        </Field>
+        <Field Name="Yname">
+          <DataField>Yname</DataField>
+        </Field>
+        <Field Name="EmployeeBasicSalary">
+          <DataField>EmployeeBasicSalary</DataField>
+        </Field>
+        <Field Name="EmployeeBasicSalaryFormat">
+          <DataField>EmployeeBasicSalaryFormat</DataField>
+        </Field>
+        <Field Name="TaxReliefVer2">
+          <DataField>TaxReliefVer2</DataField>
+        </Field>
+        <Field Name="TaxReliefVer2Format">
+          <DataField>TaxReliefVer2Format</DataField>
+        </Field>
+        <Field Name="InsuranceReliefVer2">
+          <DataField>InsuranceReliefVer2</DataField>
+        </Field>
+        <Field Name="InsuranceReliefVer2Format">
+          <DataField>InsuranceReliefVer2Format</DataField>
+        </Field>
+        <Field Name="PayeVer2">
+          <DataField>PayeVer2</DataField>
+        </Field>
+        <Field Name="PayeVer2Format">
+          <DataField>PayeVer2Format</DataField>
+        </Field>
+        <Field Name="OtherAllowancesVer2">
+          <DataField>OtherAllowancesVer2</DataField>
+        </Field>
+        <Field Name="OtherAllowancesVer2Format">
+          <DataField>OtherAllowancesVer2Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

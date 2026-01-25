@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_DateSpecified_0___year4___">
+          <DataField>FORMAT_DateSpecified_0___year4___</DataField>
+        </Field>
+        <Field Name="CoName">
+          <DataField>CoName</DataField>
+        </Field>
+        <Field Name="Employee__First_Name_">
+          <DataField>Employee__First_Name_</DataField>
+        </Field>
+        <Field Name="Employee__Last_Name_">
+          <DataField>Employee__Last_Name_</DataField>
+        </Field>
+        <Field Name="Employee_PAYE">
+          <DataField>Employee_PAYE</DataField>
+        </Field>
+        <Field Name="Employee_PAYEFormat">
+          <DataField>Employee_PAYEFormat</DataField>
+        </Field>
+        <Field Name="Employee_Employee__PIN_Number_">
+          <DataField>Employee_Employee__PIN_Number_</DataField>
+        </Field>
+        <Field Name="Employee__No__">
+          <DataField>Employee__No__</DataField>
+        </Field>
+        <Field Name="Employee_Employee__Taxable_Income_">
+          <DataField>Employee_Employee__Taxable_Income_</DataField>
+        </Field>
+        <Field Name="Employee_Employee__Taxable_Income_Format">
+          <DataField>Employee_Employee__Taxable_Income_Format</DataField>
+        </Field>
+        <Field Name="Employee_PAYE_Control5">
+          <DataField>Employee_PAYE_Control5</DataField>
+        </Field>
+        <Field Name="Employee_PAYE_Control5Format">
+          <DataField>Employee_PAYE_Control5Format</DataField>
+        </Field>
+        <Field Name="Employee_Employee__Taxable_Income__Control1000000001">
+          <DataField>Employee_Employee__Taxable_Income__Control1000000001</DataField>
+        </Field>
+        <Field Name="Employee_Employee__Taxable_Income__Control1000000001Format">
+          <DataField>Employee_Employee__Taxable_Income__Control1000000001Format</DataField>
+        </Field>
+        <Field Name="SUPPORTING_LIST_TO_THE_END_OF_YEAR_CERTIFICATECaption">
+          <DataField>SUPPORTING_LIST_TO_THE_END_OF_YEAR_CERTIFICATECaption</DataField>
+        </Field>
+        <Field Name="Payroll_NumberCaption">
+          <DataField>Payroll_NumberCaption</DataField>
+        </Field>
+        <Field Name="Employee_Caption">
+          <DataField>Employee_Caption</DataField>
+        </Field>
+        <Field Name="PIN_NumberCaption">
+          <DataField>PIN_NumberCaption</DataField>
+        </Field>
+        <Field Name="Total_Tax_KshsCaption">
+          <DataField>Total_Tax_KshsCaption</DataField>
+        </Field>
+        <Field Name="PERIODCaption">
+          <DataField>PERIODCaption</DataField>
+        </Field>
+        <Field Name="TAXABLE_PAYCaption">
+          <DataField>TAXABLE_PAYCaption</DataField>
+        </Field>
+        <Field Name="TotalsCaption">
+          <DataField>TotalsCaption</DataField>
+        </Field>
+        <Field Name="P10ACaption">
+          <DataField>P10ACaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

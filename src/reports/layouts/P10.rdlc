@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="EmptyString">
+          <DataField>EmptyString</DataField>
+        </Field>
+        <Field Name="DataItem22">
+          <DataField>DataItem22</DataField>
+        </Field>
+        <Field Name="This_total_tax_has_been_paid_as_follows___">
+          <DataField>This_total_tax_has_been_paid_as_follows___</DataField>
+        </Field>
+        <Field Name="Company__Company_P_I_N_">
+          <DataField>Company__Company_P_I_N_</DataField>
+        </Field>
+        <Field Name="FORMAT__Starting_Date__0___year4___">
+          <DataField>FORMAT__Starting_Date__0___year4___</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_Name">
+          <DataField>Payroll_PeriodX1_Name</DataField>
+        </Field>
+        <Field Name="EmptyString_Control16">
+          <DataField>EmptyString_Control16</DataField>
+        </Field>
+        <Field Name="ABS_paye_">
+          <DataField>ABS_paye_</DataField>
+        </Field>
+        <Field Name="ABS_paye_Format">
+          <DataField>ABS_paye_Format</DataField>
+        </Field>
+        <Field Name="STRSUBSTNO__NAME_OF_EMPLOYER_____1__COMPANYNAME_">
+          <DataField>STRSUBSTNO__NAME_OF_EMPLOYER_____1__COMPANYNAME_</DataField>
+        </Field>
+        <Field Name="ABS__P_A_Y_E__">
+          <DataField>ABS__P_A_Y_E__</DataField>
+        </Field>
+        <Field Name="ABS__P_A_Y_E__Format">
+          <DataField>ABS__P_A_Y_E__Format</DataField>
+        </Field>
+        <Field Name="We_I_certify_that_the_particulars_entered_above_are_correct_">
+          <DataField>We_I_certify_that_the_particulars_entered_above_are_correct_</DataField>
+        </Field>
+        <Field Name="OFFICIAL_USE_">
+          <DataField>OFFICIAL_USE_</DataField>
+        </Field>
+        <Field Name="BATCH_No_________________________________________________________________">
+          <DataField>BATCH_No_________________________________________________________________</DataField>
+        </Field>
+        <Field Name="SIGNATURE____________________________________________________________">
+          <DataField>SIGNATURE____________________________________________________________</DataField>
+        </Field>
+        <Field Name="DATE______________________________________________________________________">
+          <DataField>DATE______________________________________________________________________</DataField>
+        </Field>
+        <Field Name="SIGNATURE_______________________________________________________________">
+          <DataField>SIGNATURE_______________________________________________________________</DataField>
+        </Field>
+        <Field Name="DATE___________________________________________________________________________">
+          <DataField>DATE___________________________________________________________________________</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1__P_A_Y_E_">
+          <DataField>Payroll_PeriodX1__P_A_Y_E_</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1__P_A_Y_E_Format">
+          <DataField>Payroll_PeriodX1__P_A_Y_E_Format</DataField>
+        </Field>
+        <Field Name="P10Caption">
+          <DataField>P10Caption</DataField>
+        </Field>
+        <Field Name="KENYA_REVENUE_AUTHORITYCaption">
+          <DataField>KENYA_REVENUE_AUTHORITYCaption</DataField>
+        </Field>
+        <Field Name="INCOME_TAX_DEPARTMENTCaption">
+          <DataField>INCOME_TAX_DEPARTMENTCaption</DataField>
+        </Field>
+        <Field Name="P_A_Y_E_EMPLOYER_S_CERTIFICATECaption">
+          <DataField>P_A_Y_E_EMPLOYER_S_CERTIFICATECaption</DataField>
+        </Field>
+        <Field Name="To_Senior_Assistant_Assistant_Commisioner_Caption">
+          <DataField>To_Senior_Assistant_Assistant_Commisioner_Caption</DataField>
+        </Field>
+        <Field Name="EMPLOYER_S_P_I_NCaption">
+          <DataField>EMPLOYER_S_P_I_NCaption</DataField>
+        </Field>
+        <Field Name="YEARCaption">
+          <DataField>YEARCaption</DataField>
+        </Field>
+        <Field Name="MonthCaption">
+          <DataField>MonthCaption</DataField>
+        </Field>
+        <Field Name="P_A_Y_E_TAXCaption">
+          <DataField>P_A_Y_E_TAXCaption</DataField>
+        </Field>
+        <Field Name="DATE_PAID_PER_RECEIVING_BANK_STAMP_Caption">
+          <DataField>DATE_PAID_PER_RECEIVING_BANK_STAMP_Caption</DataField>
+        </Field>
+        <Field Name="TOTAL_TAX_SHS_Caption">
+          <DataField>TOTAL_TAX_SHS_Caption</DataField>
+        </Field>
+        <Field Name="ADDRESS__________________________________________________________________Caption">
+          <DataField>ADDRESS__________________________________________________________________Caption</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_Starting_Date">
+          <DataField>Payroll_PeriodX1_Starting_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

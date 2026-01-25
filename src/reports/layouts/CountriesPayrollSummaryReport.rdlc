@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="CompanyPIN">
+          <DataField>CompanyPIN</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="ComapnyEmail">
+          <DataField>ComapnyEmail</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="Code">
+          <DataField>Code</DataField>
+        </Field>
+        <Field Name="Country_Currency">
+          <DataField>Country_Currency</DataField>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="StaffCount">
+          <DataField>StaffCount</DataField>
+        </Field>
+        <Field Name="GrossSalary">
+          <DataField>GrossSalary</DataField>
+        </Field>
+        <Field Name="GrossSalaryFormat">
+          <DataField>GrossSalaryFormat</DataField>
+        </Field>
+        <Field Name="NetSalary">
+          <DataField>NetSalary</DataField>
+        </Field>
+        <Field Name="NetSalaryFormat">
+          <DataField>NetSalaryFormat</DataField>
+        </Field>
+        <Field Name="RWFGross">
+          <DataField>RWFGross</DataField>
+        </Field>
+        <Field Name="RWFGrossFormat">
+          <DataField>RWFGrossFormat</DataField>
+        </Field>
+        <Field Name="RWFNetSalary">
+          <DataField>RWFNetSalary</DataField>
+        </Field>
+        <Field Name="RWFNetSalaryFormat">
+          <DataField>RWFNetSalaryFormat</DataField>
+        </Field>
+        <Field Name="USDGross">
+          <DataField>USDGross</DataField>
+        </Field>
+        <Field Name="USDGrossFormat">
+          <DataField>USDGrossFormat</DataField>
+        </Field>
+        <Field Name="USDNetSalary">
+          <DataField>USDNetSalary</DataField>
+        </Field>
+        <Field Name="USDNetSalaryFormat">
+          <DataField>USDNetSalaryFormat</DataField>
+        </Field>
+        <Field Name="PayPeriod">
+          <DataField>PayPeriod</DataField>
+        </Field>
+        <Field Name="MonthTitle">
+          <DataField>MonthTitle</DataField>
+        </Field>
+        <Field Name="MonthTitleCaps">
+          <DataField>MonthTitleCaps</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

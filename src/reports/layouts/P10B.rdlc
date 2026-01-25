@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1_Code">
+          <DataField>Loans_transactionsX1_Code</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1_Name">
+          <DataField>Loans_transactionsX1_Name</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1_Employee">
+          <DataField>Loans_transactionsX1_Employee</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1__Loan_Amount_">
+          <DataField>Loans_transactionsX1__Loan_Amount_</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1__Loan_Amount_Format">
+          <DataField>Loans_transactionsX1__Loan_Amount_Format</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1__Interest_Rate_">
+          <DataField>Loans_transactionsX1__Interest_Rate_</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1__Interest_Rate_Format">
+          <DataField>Loans_transactionsX1__Interest_Rate_Format</DataField>
+        </Field>
+        <Field Name="FRINGE_BENEFIT_TAX_REPORT_P10BCaption">
+          <DataField>FRINGE_BENEFIT_TAX_REPORT_P10BCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="PERIODCaption">
+          <DataField>PERIODCaption</DataField>
+        </Field>
+        <Field Name="UserCaption">
+          <DataField>UserCaption</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1_EmployeeCaption">
+          <DataField>Loans_transactionsX1_EmployeeCaption</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1__Loan_Amount_Caption">
+          <DataField>Loans_transactionsX1__Loan_Amount_Caption</DataField>
+        </Field>
+        <Field Name="Interest_Rate__Caption">
+          <DataField>Interest_Rate__Caption</DataField>
+        </Field>
+        <Field Name="Tax_PayableCaption">
+          <DataField>Tax_PayableCaption</DataField>
+        </Field>
+        <Field Name="Loan_BalanceCaption">
+          <DataField>Loan_BalanceCaption</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1_CodeCaption">
+          <DataField>Loans_transactionsX1_CodeCaption</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1_NameCaption">
+          <DataField>Loans_transactionsX1_NameCaption</DataField>
+        </Field>
+        <Field Name="Market_Interest_Rate__Caption">
+          <DataField>Market_Interest_Rate__Caption</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_Name">
+          <DataField>Payroll_PeriodX1_Name</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1__Market_Interest_Rate___">
+          <DataField>Payroll_PeriodX1__Market_Interest_Rate___</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1__Market_Interest_Rate___Format">
+          <DataField>Payroll_PeriodX1__Market_Interest_Rate___Format</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1___Interest_Rate_">
+          <DataField>Loans_transactionsX1___Interest_Rate_</DataField>
+        </Field>
+        <Field Name="Loans_transactionsX1___Interest_Rate_Format">
+          <DataField>Loans_transactionsX1___Interest_Rate_Format</DataField>
+        </Field>
+        <Field Name="TaxPayable">
+          <DataField>TaxPayable</DataField>
+        </Field>
+        <Field Name="TaxPayableFormat">
+          <DataField>TaxPayableFormat</DataField>
+        </Field>
+        <Field Name="Outstanding">
+          <DataField>Outstanding</DataField>
+        </Field>
+        <Field Name="OutstandingFormat">
+          <DataField>OutstandingFormat</DataField>
+        </Field>
+        <Field Name="TotTaxpayable">
+          <DataField>TotTaxpayable</DataField>
+        </Field>
+        <Field Name="TotTaxpayableFormat">
+          <DataField>TotTaxpayableFormat</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX1_Starting_Date">
+          <DataField>Payroll_PeriodX1_Starting_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
