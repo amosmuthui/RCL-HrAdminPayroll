@@ -597,7 +597,7 @@ tableextension 51525300 "Emp Ext" extends Employee
                             HRCareerHistoryRec.FIND('+');
                             HRCareerHistoryRec."Line No.":=HRCareerHistoryRec."Line No."+1;
                           END;
-                
+
                            HRCareerHistoryRec.Reason := CareerEvent.ReturnReason;
                            HRCareerHistoryRec."Employee No.":= "No.";
                            HRCareerHistoryRec."Date Of Event":= TODAY;
@@ -605,7 +605,7 @@ tableextension 51525300 "Emp Ext" extends Employee
                            HRCareerHistoryRec."Last Name":= "Last Name";
                            HRCareerHistoryRec."Employee First Name":= "Known As";
                            HRCareerHistoryRec."Employee Last Name":= "Last Name";
-                
+
                            HRCareerHistoryRec.INSERT;
                         END;
                     END;
@@ -627,41 +627,6 @@ tableextension 51525300 "Emp Ext" extends Employee
                     "Establishment Name" := CompanyJobsRec."Job Description";
                     "Job Title" := CopyStr(CompanyJobsRec."Job Description", 1, MaxStrLen("Job Title"));
                     "PTH Job Title" := CompanyJobsRec."Job Description";
-                    //"Salary Scale":=CompanyJobsRec.Grade;
-                    //"Notice Period":=CompanyJobsRec."Notice Period";
-                    // "Global Dimension 1 Code":=CompanyJobsRec."Dimension 1";
-
-                    /*if ((xRec.Position <> '') and (Position <> xRec.Position)) then begin
-                        CompanyJobsRec.Reset;
-                        CompanyJobsRec.SetRange(CompanyJobsRec."Job ID", Position);
-                        if CompanyJobsRec.Find('-') then begin
-                            //  "Job Title":=CompanyJobsRec."Job Description";
-                            // "Salary Scheme Category":=CompanyJobsRec.Category;
-                        end;*/
-
-
-
-                    /*CareerEvent.SetMessage('Job Title Changed');
-                    CareerEvent.RunModal;*/
-                    //  OK:= CareerEvent.ReturnResult;
-                    // IF OK THEN BEGIN
-                    /*HRCareerHistoryRec.Init;
-                    if not HRCareerHistoryRec.Find('-') then
-                        HRCareerHistoryRec."Line No." := 1
-                    else begin
-                        HRCareerHistoryRec.Find('+');
-                        HRCareerHistoryRec."Line No." := HRCareerHistoryRec."Line No." + 1;
-                    end;
-
-                    HRCareerHistoryRec."Employee No." := "No.";
-                    HRCareerHistoryRec."Date Of Event" := Today;
-                    HRCareerHistoryRec."Career Event" := 'Job Title Changed';
-                    HRCareerHistoryRec."Job Title" := "Job Title";
-                    HRCareerHistoryRec."Employee First Name" := "First Name";
-                    HRCareerHistoryRec."Employee Last Name" := "Last Name";
-                    HRCareerHistoryRec.Reason := 'Job Title Changed';//CareerEvent.ReturnReason;
-                    HRCareerHistoryRec.Insert;*/
-                    //end;
                 end;
             end;
         }
@@ -672,31 +637,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*
-                 IF ("Full / Part Time" <> xRec."Full / Part Time") THEN BEGIN
-                    CareerEvent.SetMessage('Full / Part Time Changed');
-                    CareerEvent.RUNMODAL;
-                    OK:= CareerEvent.ReturnResult;
-                     IF OK THEN BEGIN
-                        HRCareerHistoryRec.INIT;
-                        IF NOT HRCareerHistoryRec.FIND('-') THEN
-                         HRCareerHistoryRec."Line No.":=1
-                       ELSE BEGIN
-                         HRCareerHistoryRec.FIND('+');
-                         HRCareerHistoryRec."Line No.":=HRCareerHistoryRec."Line No."+1;
-                       END;
-
-                        HRCareerHistoryRec."Employee No.":= "No.";
-                        HRCareerHistoryRec."Date Of Event":= TODAY;
-                        HRCareerHistoryRec."Career Event":= 'Full / Part Time Changed';
-                        HRCareerHistoryRec."Full/Part Time":= "Full / Part Time";
-                        HRCareerHistoryRec."Employee First Name":= "Known As";
-                        HRCareerHistoryRec."Employee Last Name":= "Last Name";
-                        HRCareerHistoryRec.INSERT;
-                     END;
-                 END;
-             */
-
             end;
         }
         field(51525407; "Contract Type"; Code[60])
@@ -706,30 +646,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*      CareerEvent.SetMessage('Contract Type Changed');
-                      CareerEvent.RUNMODAL;
-                       OK:= CareerEvent.ReturnResult;
-                      // IF OK THEN BEGIN
-                          HRCareerHistoryRec.INIT;
-                          IF NOT HRCareerHistoryRec.FIND('-') THEN
-                           HRCareerHistoryRec."Line No.":=1
-                         ELSE
-                 BEGIN
-                           HRCareerHistoryRec.FIND('+');
-                           HRCareerHistoryRec."Line No.":=HRCareerHistoryRec."Line No."+1;
-                       END;
-
-                          HRCareerHistoryRec."Employee No.":= "No.";
-                          HRCareerHistoryRec."Date Of Event":= TODAY;
-                          HRCareerHistoryRec."Career Event":= 'Contract Type Changed';
-                          HRCareerHistoryRec."Job Title":= "Job Title";
-                          HRCareerHistoryRec."Employee First Name":= "Known As";
-                          HRCareerHistoryRec."Employee Last Name":= "Last Name";
-                          HRCareerHistoryRec.Reason:=CareerEvent.ReturnReason;
-                          HRCareerHistoryRec.INSERT;
-                       //END;
-               */
-
             end;
         }
         field(51525408; "Contract End Date"; Date)
@@ -753,30 +669,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*   IF ("Marital Status" <> xRec."Marital Status") THEN BEGIN
-                      CareerEvent.SetMessage('Marital Status Changed');
-                      CareerEvent.RUNMODAL;
-                      OK:= CareerEvent.ReturnResult;
-                       IF OK THEN BEGIN
-                          HRCareerHistoryRec.INIT;
-                          IF NOT HRCareerHistoryRec.FIND('-') THEN
-                           HRCareerHistoryRec."Line No.":=1
-                         ELSE BEGIN
-                           HRCareerHistoryRec.FIND('+');
-                           HRCareerHistoryRec."Line No.":=HRCareerHistoryRec."Line No."+1;
-                         END;
-
-                          HRCareerHistoryRec."Employee No.":= "No.";
-                          HRCareerHistoryRec."Date Of Event":= TODAY;
-                          HRCareerHistoryRec."Career Event":= 'Marital Status Changed';
-                          HRCareerHistoryRec."Marital Status":= "Marital Status";
-                          HRCareerHistoryRec."Employee First Name":= "Known As";
-                          HRCareerHistoryRec."Employee Last Name":= "Last Name";
-                          HRCareerHistoryRec.INSERT;
-                       END;
-                   END;
-                  */
-
             end;
         }
         field(51525411; "Ethnic Origin"; Option)
@@ -786,14 +678,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*EmployeeEquity.SETRANGE("Employee No.","No.");
-                OK:= EmployeeEquity.FIND('-');
-                IF OK THEN BEGIN
-                  EmployeeEquity."Ethnic Origin":= "Ethnic Origin";
-                  EmployeeEquity.MODIFY;
-                END;
-                 */
-
             end;
         }
         field(51525412; "First Language (R/W/S)"; Code[10])
@@ -813,11 +697,9 @@ tableextension 51525300 "Emp Ext" extends Employee
                 HumanResSetup.Get;
                 if Disabled = false then begin
                     "Retirement Date" := CalcDate(HumanResSetup."Retirement Age", "Date Of Birth");
-
                     "Remainig Years Before Retireme" := Format(HRDates.DetermineAge(Today, CalcDate(HumanResSetup."Retirement Age", "Date Of Birth")));
                 end else begin
                     "Retirement Date" := CalcDate(HumanResSetup."Retirement Age PWD", "Date Of Birth");
-
                     "Remainig Years Before Retireme" := Format(HRDates.DetermineAge(Today, "Retirement Date"));
                 end;
 
@@ -831,7 +713,6 @@ tableextension 51525300 "Emp Ext" extends Employee
                     EmpHist."Last Date" := "Contract End Date";
                     EmpHist.Modify();
                 end;
-
             end;
         }
         field(51525415; Age; Text[80])
@@ -848,9 +729,7 @@ tableextension 51525300 "Emp Ext" extends Employee
                 "Date of Appointment" := "Date Of Join";
                 Validate("Date of Appointment");
                 "End Of Probation Date" := CALCDATE('+' + format(HumanResSetup."Probation Period(Months)") + 'M', "Date Of Join");
-
                 Validate("Employment Date");
-
             end;
         }
         field(51525417; "Length Of Service"; Text[50])
@@ -868,11 +747,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*  IF ("Date Of Leaving" <> 0D) AND ("Pension Scheme Join" <> 0D) THEN
-                   "Time Pension Scheme":= Dates.DetermineAge("Pension Scheme Join","Date Of Leaving");
-
-            */
-
             end;
         }
         field(51525420; "Time Pension Scheme"; Text[50])
@@ -885,19 +759,11 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*  IF  ("Date Of Leaving" <> 0D) AND ("Medical Scheme Join" <> 0D) THEN
-                   "Time Medical Scheme":= Dates.DetermineAge("Medical Scheme Join","Date Of Leaving");
-                */
-
             end;
         }
         field(51525422; "Time Medical Scheme"; Text[50])
         {
             DataClassification = ToBeClassified;
-            //This property is currently not supported
-            //TestTableRelation = true;
-            //The property 'ValidateTableRelation' can only be set if the property 'TableRelation' is set
-            //ValidateTableRelation = true;
         }
         field(51525423; "Date Of Leaving"; Date)
         {
@@ -905,69 +771,8 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*
-                 IF ("Date Of Join" <> 0D) AND ("Date Of Leaving" <> 0D) THEN
-                  "Length Of Service":= Dates.DetermineAge("Date Of Join","Date Of Leaving");
-                 IF ("Pension Scheme Join" <> 0D) AND ("Date Of Leaving" <> 0D) THEN
-                  "Time Pension Scheme":= Dates.DetermineAge("Pension Scheme Join","Date Of Leaving");
-                 IF ("Medical Scheme Join" <> 0D) AND ("Date Of Leaving" <> 0D) THEN
-                  "Time Medical Scheme":= Dates.DetermineAge("Medical Scheme Join","Date Of Leaving");
-
-
-                 IF ("Date Of Leaving" <> 0D) AND ("Date Of Leaving" <> xRec."Date Of Leaving") THEN BEGIN
-                    ExitInterviews.SETRANGE("Employee No.","No.");
-                    OK:= ExitInterviews.FIND('-');
-                    IF OK THEN BEGIN
-                      ExitInterviews."Date Of Leaving":= "Date Of Leaving";
-                      ExitInterviews.MODIFY;
-                    END;
-                    COMMIT();
-                 END;
-
-                  */
-
                 if ("Date Of Leaving" <> 0D) and ("Date Of Leaving" <> xRec."Date Of Leaving") then begin
-
-                    /*CareerEvent.SetMessage('Left The Company');
-                    CareerEvent.RunModal;*/
-                    //OK:= CareerEvent.ReturnResult;
-                    // IF OK THEN BEGIN
-                    /*HRCareerHistoryRec.Init;
-                    if not HRCareerHistoryRec.Find('-') then
-                        HRCareerHistoryRec."Line No." := 1
-                    else begin
-                        HRCareerHistoryRec.Find('+');
-                        HRCareerHistoryRec."Line No." := HRCareerHistoryRec."Line No." + 1;
-                    end;
-
-                    HRCareerHistoryRec."Employee No." := "No.";
-                    HRCareerHistoryRec."Date Of Event" := "Date Of Leaving";
-                    HRCareerHistoryRec."Career Event" := 'Left The Company';
-                    HRCareerHistoryRec."Employee First Name" := "First Name";
-                    HRCareerHistoryRec."Employee Last Name" := "Last Name";
-
-                    HRCareerHistoryRec.Insert;*/
-                    //  END;
-
                 end;
-
-                /*
-                ExitInterviewTemplate.RESET;
-                //TrainingEvalTemplate.SETRANGE(TrainingEvalTemplate."AIT/Evaluation",TrainingEvalTemplate."AIT/Evaluation"::AIT);
-                IF ExitInterviewTemplate.FIND('-') THEN
-                REPEAT
-                ExitInterviewLines.INIT;
-                ExitInterviewLines."Employee No":="No.";
-                ExitInterviewLines.Question:=ExitInterviewTemplate.Question;
-                ExitInterviewLines."Line No":=ExitInterviewTemplate."Line No";
-                ExitInterviewLines.Bold:=ExitInterviewTemplate.Bold;
-                ExitInterviewLines."Answer Type":=ExitInterviewTemplate."Answer Type";
-                IF NOT ExitInterviewLines.GET(ExitInterviewLines."Line No",ExitInterviewLines."Employee No") THEN
-                ExitInterviewLines.INSERT
-
-
-                UNTIL ExitInterviewTemplate.NEXT=0;
-                                      */
 
                 //KKB 13/09/2017
                 if "Date Of Leaving" <> 0D then begin
@@ -987,7 +792,6 @@ tableextension 51525300 "Emp Ext" extends Employee
                     end;
                 end;
                 //==================================================
-
             end;
         }
         field(51525424; "Second Language (R/W/S)"; Code[10])
@@ -1009,16 +813,11 @@ tableextension 51525300 "Emp Ext" extends Employee
                 "Lrec Resource": Record Resource;
                 OK: Boolean;
             begin
-                //**Added by ACR 12/08/2002
-                //**Block resource if Terminated
-
                 if "Resource No." <> '' then begin
                     OK := "Lrec Resource".Get("Resource No.");
                     "Lrec Resource".Blocked := true;
                     "Lrec Resource".Modify;
                 end;
-
-                //**
             end;
         }
         field(51525427; "Job Specification"; Code[30])
@@ -1035,12 +834,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*Employee.RESET;
-                Employee.SETRANGE(Employee."Passport Number","Passport Number");
-                IF Employee.FIND('-') THEN
-                ERROR('You have already created an employee with Passport Number %1 in Employee No %2',"Passport Number",Employee."No.");
-                */
-
             end;
         }
         field(51525431; "First Language Read"; Boolean)
@@ -1099,40 +892,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*CompanyJobsRec.RESET;
-                IF CompanyJobsRec.GET("Position To Succeed") THEN
-                  "Position To Succeed Name":=CompanyJobsRec."Job Description";
-                
-                SuccessionGap.RESET;
-                SuccessionGap.SETRANGE(SuccessionGap."Employee No","No.");
-                IF SuccessionGap.FIND('-') THEN
-                SuccessionGap.DELETEALL;
-                
-                JobReq.RESET;
-                JobReq.SETRANGE(JobReq."Job Id","Position To Succeed");
-                IF JobReq.FIND('-') THEN
-                BEGIN
-                REPEAT
-                EmpQualification.RESET;
-                EmpQualification.SETRANGE(EmpQualification."Employee No.","No.");
-                EmpQualification.SETRANGE(EmpQualification."Qualification Code",JobReq."Qualification Code");
-                //IF NOT EmpQualification.GET("No.",JobReq."Qualification Code") THEN
-                IF NOT EmpQualification.FIND('-') THEN
-                BEGIN
-                
-                SuccessionGap.INIT;
-                SuccessionGap."Employee No":="No.";
-                SuccessionGap."Job Id":=JobReq."Job Id";
-                SuccessionGap."Qualification Type":=JobReq."Qualification Type";
-                SuccessionGap."Qualification Code":=JobReq."Qualification Code";
-                SuccessionGap.Qualification:=JobReq.Qualification;
-                SuccessionGap.Priority:=JobReq.Priority;
-                SuccessionGap.INSERT;
-                END;
-                UNTIL JobReq.NEXT = 0;
-                END;
-                */
-
             end;
         }
         field(51525445; "Succesion Date"; Date)
@@ -1149,30 +908,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*       CareerEvent.SetMessage('Religion Changed');
-                       CareerEvent.RUNMODAL;
-                        OK:= CareerEvent.ReturnResult;
-                       // IF OK THEN BEGIN
-                           HRCareerHistoryRec.INIT;
-                           IF NOT HRCareerHistoryRec.FIND('-') THEN
-                            HRCareerHistoryRec."Line No.":=1
-                          ELSE
-                  BEGIN
-                            HRCareerHistoryRec.FIND('+');
-                            HRCareerHistoryRec."Line No.":=HRCareerHistoryRec."Line No."+1;
-                        END;
-                
-                           HRCareerHistoryRec."Employee No.":= "No.";
-                           HRCareerHistoryRec."Date Of Event":= TODAY;
-                           HRCareerHistoryRec."Career Event":= 'Religion Changed';
-                           HRCareerHistoryRec."Job Title":= "Job Title";
-                           HRCareerHistoryRec."Employee First Name":= "Known As";
-                           HRCareerHistoryRec."Employee Last Name":= "Last Name";
-                           HRCareerHistoryRec.Reason:=CareerEvent.ReturnReason;
-                           HRCareerHistoryRec.INSERT;
-                        //END;
-                */
-
             end;
         }
         field(51525449; "Served Notice Period"; Boolean)
@@ -1235,65 +970,10 @@ tableextension 51525300 "Emp Ext" extends Employee
         field(51525462; Present; Code[30])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Scale Benefits"."Salary Pointer" WHERE("Salary Scale" = FIELD("Salary Scale")/*,
-                                                                     "ED Code" = CONST('01')*/);
+            TableRelation = "Scale Benefits"."Salary Pointer" WHERE("Salary Scale" = FIELD("Salary Scale"));
 
             trigger OnValidate()
             begin
-                /*GetPayPeriod;
-                Earnings.RESET;
-                Earnings.SETRANGE(Earnings."Pay Type",Earnings."Pay Type"::Recurring);
-                IF Earnings.FIND('-') THEN BEGIN
-                ScaleBenefits.RESET;
-                ScaleBenefits.SETRANGE(ScaleBenefits."Salary Scale","Salary Scale");
-                ScaleBenefits.SETRANGE(ScaleBenefits."Salary Pointer",Present);
-                ScaleBenefits.SETRANGE(ScaleBenefits."ED Code",Earnings.Code);
-                IF ScaleBenefits.FIND('-') THEN
-                REPEAT
-                 AssMatrix.INIT;
-                 AssMatrix."Employee No":="No.";
-                 AssMatrix.VALIDATE(AssMatrix."Employee No");
-                 AssMatrix.Type:=AssMatrix.Type::Payment;
-                 AssMatrix.Code:=ScaleBenefits."ED Code";
-                 AssMatrix.VALIDATE(AssMatrix.Code);
-                 AssMatrix."Payroll Period":=Begindate;
-                 AssMatrix.Amount:=ScaleBenefits.Amount;
-                 IF NOT AssMatrix.GET(AssMatrix."Employee No",AssMatrix.Type,AssMatrix.Code,AssMatrix."Payroll Period",
-                 AssMatrix."Reference No") THEN  BEGIN
-                 IF  AssMatrix.Amount<>ScaleBenefits.Amount THEN
-                 AssMatrix.INSERT;
-                 END;
-                UNTIL ScaleBenefits.NEXT=0;
-                END;
-                */
-
-
-                /*CareerEvent.SetMessage('Salary Pointer Changed');
-                      CareerEvent.RUNMODAL;
-                       //OK:= CareerEvent.ReturnResult;
-                      IF OK THEN BEGIN
-                          HRCareerHistoryRec.INIT;
-                          IF NOT HRCareerHistoryRec.FIND('-') THEN
-                           HRCareerHistoryRec."Line No.":=1
-                         ELSE
-                 BEGIN
-                           HRCareerHistoryRec.FIND('+');
-                           HRCareerHistoryRec."Line No.":=HRCareerHistoryRec."Line No."+1;
-                       END;
-
-                          HRCareerHistoryRec."Employee No.":= "No.";
-                          HRCareerHistoryRec."Date Of Event":= TODAY;
-                          HRCareerHistoryRec."Career Event":= 'Salary Pointer Changed';
-                          HRCareerHistoryRec."Job Title":= "Job Title";
-                          HRCareerHistoryRec."Employee First Name":= "Known As";
-                          HRCareerHistoryRec."Employee Last Name":= "Last Name";
-                          HRCareerHistoryRec.Reason:=CareerEvent.ReturnReason;
-                          HRCareerHistoryRec.INSERT;
-                       //END;
-
-
-                */
-
             end;
         }
         field(51525463; Previous; Code[30])
@@ -1312,31 +992,8 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-
                 if SalaryScalesRec.Get("Salary Scale") then
                     Halt := SalaryScalesRec."Maximum Pointer";
-                /*CareerEvent.SetMessage('Salary Scale/Grade Changed');
-                CareerEvent.RunModal;
-                // OK:= CareerEvent.ReturnResult;
-                // IF OK THEN BEGIN
-                HRCareerHistoryRec.Init;
-                if not HRCareerHistoryRec.Find('-') then
-                    HRCareerHistoryRec."Line No." := 1
-                else begin
-                    HRCareerHistoryRec.Find('+');
-                    HRCareerHistoryRec."Line No." := HRCareerHistoryRec."Line No." + 1;
-                end;
-
-                HRCareerHistoryRec."Employee No." := "No.";
-                HRCareerHistoryRec."Date Of Event" := Today;
-                HRCareerHistoryRec."Career Event" := 'Salary Scale/Grade Changed';
-                HRCareerHistoryRec."Job Title" := "Job Title";
-                HRCareerHistoryRec."Employee First Name" := "First Name";
-                HRCareerHistoryRec."Employee Last Name" := "Last Name";
-                HRCareerHistoryRec.Reason := CareerEvent.ReturnReason;
-                HRCareerHistoryRec.Insert;*/
-                //END;
-
             end;
         }
         field(51525466; Insurance; Decimal)
@@ -1450,23 +1107,6 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-                /*TESTFIELD("Contract Type");
-                IF "Contract Type"<>'PERM' THEN BEGIN
-                 EmployeeContracts.RESET;
-                 EmployeeContracts.SETRANGE(EmployeeContracts."Contract No",FORMAT("Contract Number"));
-                 IF EmployeeContracts.FIND('-') THEN BEGIN
-                   "Contract Start Date":=EmployeeContracts."Contract Start Date";
-                   "Contract End Date":=EmployeeContracts."Contract End Date";
-                   "Retirement Date":=EmployeeContracts."Contract End Date";
-                 END;
-                END ELSE BEGIN
-                   "Contract Start Date":="Date Of Join";
-                   HumanResSetup.GET;
-                   "Contract End Date":=CALCDATE(FORMAT(HumanResSetup."Retirement Age")+'Y',"Date Of Join");
-                   "Retirement Date":=CALCDATE(FORMAT(HumanResSetup."Retirement Age")+'Y',"Date Of Join");
-                END;
-                */
-
             end;
         }
         field(51525486; "Leave Balance"; Decimal)
@@ -1521,15 +1161,10 @@ tableextension 51525300 "Emp Ext" extends Employee
         field(51525500; "Bank Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            //TableRelation = "KBA Bank Names"."Bank Code";
             TableRelation = "Bank Account"."No." where("Bank Type" = const("Normal Bank"));
 
             trigger OnValidate()
             begin
-                /*KBABankNames.Reset;
-                KBABankNames.SetRange(KBABankNames."Bank Code", "Bank Code");
-                if KBABankNames.Find('-') then
-                    "Bank Name" := KBABankNames."Bank Name";*/
                 "Bank Name" := '';
                 if "Bank Code" <> '' then begin
                     Banks.Reset();
@@ -1547,22 +1182,9 @@ tableextension 51525300 "Emp Ext" extends Employee
         {
             DataClassification = ToBeClassified;
             TableRelation = "Bank Account"."Bank Branch No." WHERE("No." = FIELD("Bank Code"));
-            //TableRelation = "Kenya Bankers Association Code"."Branch Code" WHERE("Bank Code" = FIELD("Bank Code"));
 
             trigger OnValidate()
             begin
-                /*KenyaBankersAssociationCode.Reset;
-                KenyaBankersAssociationCode.SetRange("Bank Code", "Bank Code");
-                KenyaBankersAssociationCode.SetRange(KenyaBankersAssociationCode."Branch Code", "Bank Branch Code");
-                if KenyaBankersAssociationCode.Find('-') then
-                    "Bank Brach Name" := KenyaBankersAssociationCode."Branch Name";*/
-
-
-                /*Banks.Reset;
-                Banks.SetRange("No.", "Bank Code");
-                Banks.SetRange(Banks."Bank Branch Code", "Bank Branch Code");
-                if Banks.Find('-') then
-                    "Bank Brach Name" := Banks."Bank Branch No.";*/
             end;
         }
         field(51525503; "Bank Brach Name"; Text[50])
@@ -1608,7 +1230,6 @@ tableextension 51525300 "Emp Ext" extends Employee
             begin
                 if "Date of Appointment" <> 0D then begin
                     "Duration In Position" := Format(HRDates.DetermineAge("Date of Appointment", Today));
-
                 end;
             end;
         }
@@ -1772,14 +1393,10 @@ tableextension 51525300 "Emp Ext" extends Employee
 
             trigger OnValidate()
             begin
-
                 CalcFields("Total Leave Taken", LeaveCarryForward);
                 CalcFields("Reimbursed Leave Days");
-
                 "Total (Leave Days)" := "Allocated Leave Days" + "Reimbursed Leave Days" + LeaveCarryForward;
-                //SUM UP LEAVE LEDGER ENTRIES
                 "Leave Balance" := "Total (Leave Days)" + "Total Leave Taken";
-                //TotalDaysVal := Rec."Total Leave Taken";
                 Rec.Modify;
             end;
         }
@@ -1810,7 +1427,6 @@ tableextension 51525300 "Emp Ext" extends Employee
                                                                              "Posting Date" = FIELD("Date Filter"),
                                                                              Closed = CONST(false),
                                                                              "Document No." = CONST('ACCRUE'),
-                                                                             //IsMonthlyAccrued = CONST(true),
                                                                              "Leave Period" = FIELD("Leave Period")));
             FieldClass = FlowField;
         }
@@ -1884,7 +1500,6 @@ tableextension 51525300 "Emp Ext" extends Employee
                 Rec.Modify;
             end;
         }
-
         field(51525553; "Location Code"; Code[10])
         {
             Caption = 'Location Code';
@@ -1911,12 +1526,10 @@ tableextension 51525300 "Emp Ext" extends Employee
         field(51525555; "Month Filter"; Text[30])
         {
             FieldClass = FlowFilter;
-            //TableRelation = "Employee Timesheet Header".Month;
         }
         field(51525556; "Year Filter"; Text[30])
         {
             FieldClass = FlowFilter;
-            //TableRelation = "Employee Timesheet Header".Year;
         }
         field(51525557; "Earns Gratuity"; Boolean)
         {
@@ -1945,7 +1558,6 @@ tableextension 51525300 "Emp Ext" extends Employee
         field(51525563; "Skip Processing Housing Levy"; Boolean)
         {
             DataClassification = ToBeClassified;
-
         }
         field(51525564; "Assigned Gross Pay"; Decimal)
         {
@@ -2006,7 +1618,6 @@ tableextension 51525300 "Emp Ext" extends Employee
         }
         field(51525572; "Payroll Country"; Code[50])
         {
-            //Caption = 'Country';
             TableRelation = "Country/Region";
             Editable = false;
             trigger OnValidate()
@@ -2017,8 +1628,6 @@ tableextension 51525300 "Emp Ext" extends Employee
                 SelectedCountry.setrange("Code", "Payroll Country");
                 if SelectedCountry.findfirst then begin
                     "Payroll Currency" := SelectedCountry."Country Currency";
-                    /*if "Payment/Bank Currency" = '' then
-                        "Payment/Bank Currency" := SelectedCountry."Country Currency";*/
                 end;
                 if ("Payroll Country" <> '') and ("Payment/Bank Country" = '') then
                     "Payment/Bank Country" := "Payroll Country";
@@ -2036,7 +1645,6 @@ tableextension 51525300 "Emp Ext" extends Employee
         }
         field(51525574; "Workstation Country"; Code[50])
         {
-            //Caption = 'Country';
             TableRelation = "Country/Region";
         }
         field(51525575; "Contractual Amount Currency"; Code[20])
@@ -2092,7 +1700,7 @@ tableextension 51525300 "Emp Ext" extends Employee
         }
         field(51525586; "Medical Insurance"; Option)
         {
-            OptionCaption = 'RAMA,MMI'; //Normal
+            OptionCaption = 'RAMA,MMI';
             OptionMembers = Normal,MMI;
         }
         field(51525587; "Medical No."; Code[50])
@@ -2102,9 +1710,11 @@ tableextension 51525300 "Emp Ext" extends Employee
                 "NHIF No." := "Medical No.";
             end;
         }
-        field(51525588; "Supervisor Name"; Text[250])
+        // *** Supervisor Name is read-only on Employee Card - changes go through Change Request ***
+        field(51525588; "Supervisor Name"; Code[20])
         {
-            Editable = false;
+            Editable = true;
+            TableRelation = Employee."No.";
         }
         field(51525589; "Payroll Country Filter"; Code[50])
         {
@@ -2114,20 +1724,16 @@ tableextension 51525300 "Emp Ext" extends Employee
         }
         field(51525590; "No Transport Allowance"; Boolean)
         {
-            //Editable = false;
             trigger OnValidate()
             begin
                 "Applicable House Allowance (%)" := 0;
                 if "No Transport Allowance" then
                     "Applicable House Allowance (%)" := 84;
             end;
-
         }
         field(51525591; "Applicable House Allowance (%)"; Decimal)
         {
-            //Editable = false;
         }
-
         field(51525592; "Apply Paye Multiplier"; Boolean)
         {
             Editable = false;
@@ -2160,21 +1766,17 @@ tableextension 51525300 "Emp Ext" extends Employee
         }
         field(51525597; "MyID Eligibility"; Boolean)
         {
-            //If ten years service, you must attach cert before activating
             trigger OnValidate()
             var
                 Attachments: Record "Document Attachment";
             begin
-                //If is and but has served 10 years
                 if Status = Status::Inactive then begin
                     if ("Date of Leaving" = 0D) or ("Date Of Join" = 0D) then
                         Error('Update the dates of joining and leaving for this staff!');
 
                     if (CalcDate('-10Y', "Date of Leaving") >= "Date Of Join") then begin
-                        //Has served for 10 years - not sure about those who come and go then come back
                         Attachments.Reset();
                         Attachments.SetRange("No.", "No.");
-                        //  Attachments.SetRange("Doc Attachment Description", 'Ten Years Certificate');
                         if not Attachments.FindFirst() then
                             Error('This staff has served for 10 years but the certificate has not been uploaded.\ Go to attachments, select description "Ten Years Certificate" then upload it before proceeding!');
                     end;
@@ -2183,15 +1785,12 @@ tableextension 51525300 "Emp Ext" extends Employee
         }
         field(51525598; "Sort Code"; Text[250])
         {
-
         }
         field(51525599; Indicatif; Text[250])
         {
-
         }
         field(52211422; "Code B.I.C."; Text[250])
         {
-
         }
         field(52211423; "Suspend Leave Accrual"; Boolean)
         {
@@ -2289,7 +1888,6 @@ tableextension 51525300 "Emp Ext" extends Employee
         { }
         field(52211446; "TenYear Notification DateTime"; DateTime)
         { }
-
         field(52211447; "Given Transport Allowance"; Boolean)
         {
             CalcFormula = Lookup("Company Jobs"."Given Transport Allowance" WHERE("Job ID" = FIELD(Position)));
@@ -2304,12 +1902,10 @@ tableextension 51525300 "Emp Ext" extends Employee
         {
             TableRelation = "Job Applications";
         }
-
         field(52211450; "Retirement Benefits Comp."; Boolean)
         {
             Editable = false;
         }
-
         field(52211451; "Ineligible for Airtime"; Boolean)
         { }
     }
@@ -2338,7 +1934,6 @@ tableextension 51525300 "Emp Ext" extends Employee
         if LeaveApp.FindFirst then begin
             OnMatLeave := true;
 
-            // Employee is on maternity leave during this period
             if LeaveApp."Start Date" > PayPeriodStartDate then
                 LvStartDate := LeaveApp."Start Date"
             else
@@ -2350,7 +1945,7 @@ tableextension 51525300 "Emp Ext" extends Employee
                 LvEndDate := PayPeriodEndDate;
             LeaveDays := LvEndDate - LvStartDate + 1;
 
-            MaternityWorkingDays := MaternityWorkingDays - LeaveDays; //By default MaternityWorkingDays is no. of days in month
+            MaternityWorkingDays := MaternityWorkingDays - LeaveDays;
         end;
         exit(OnMatLeave);
     end;
@@ -2383,9 +1978,7 @@ tableextension 51525300 "Emp Ext" extends Employee
         AssMatrix: Record "Assignment Matrix";
         ansmsg: Text;
         ans: Boolean;
-
         Banks: Record "Bank Account";
-
 
     procedure GetEmpLeaveBalance(): Decimal
     var
@@ -2412,3 +2005,6 @@ tableextension 51525300 "Emp Ext" extends Employee
     end;
 
 }
+
+
+
