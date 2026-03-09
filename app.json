@@ -2,7 +2,7 @@
   "id": "673d86ca-26ca-434d-9d67-7a3dcd07efa3",
   "name": "Hr Admin and Payroll",
   "publisher": "Panache Technohub Limited",
-  "version": "27.1.1.40",
+  "version": "27.1.1.61",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -14,12 +14,12 @@
     "id": "a2eb0ca6-73f5-46c2-85dd-704595e8e548",
     "publisher": "Panache Technohub Limited",
     "name": "PTL Base Application",
-    "version": "27.1.1.10"
+    "version": "27.1.1.0"
   },{
    "id": "2d485f67-31c6-4354-aecc-ce271c008bca",
   "name": "Contract Management",
  "publisher": "Panache Technohub Limited",
-  "version": "27.1.1.4"
+  "version": "27.1.1.0"
   }],
   "screenshots": [],
   "platform": "1.0.0.0",
