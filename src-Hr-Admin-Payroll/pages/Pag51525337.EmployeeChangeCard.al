@@ -97,10 +97,30 @@ page 51525337 "Employee Change Card"
                 field("Prev Station"; Rec."Prev Station")
                 {
                 }
-
                 field(Station; Rec.Station)
                 {
                     ShowMandatory = true;
+                }
+                // *** NEW: Supervisor Name fields ***
+                field("Prev Supervisor No"; Rec."Prev Supervisor No")
+                {
+                    Caption = 'Previous Supervisor No';
+                    Editable = false;
+                }
+                field("Prev Supervisor Full Name"; Rec."Prev Supervisor Full Name")
+                {
+                    Caption = 'Previous Supervisor Name';
+                    Editable = false;
+                }
+                field("New Supervisor No"; Rec."New Supervisor No")
+                {
+                    Caption = 'New Supervisor No';
+                    ShowMandatory = false;
+                }
+                field("New Supervisor Full Name"; Rec."New Supervisor Full Name")
+                {
+                    Caption = 'New Supervisor Full Name';
+                    Editable = false;
                 }
             }
             group("Other Details")
@@ -531,7 +551,6 @@ page 51525337 "Employee Change Card"
                     Image = Approve;
                     Promoted = true;
                     PromotedCategory = Category5;
-                    //PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -574,7 +593,6 @@ page 51525337 "Employee Change Card"
                     Image = CancelApprovalRequest;
                     Promoted = true;
                     PromotedCategory = Category5;
-                    //PromotedIsBig = true;
 
                     trigger OnAction()
                     begin
@@ -582,11 +600,8 @@ page 51525337 "Employee Change Card"
                         if Rec."Change Approval Status" <> Rec."Change Approval Status"::"Pending Approval" then
                             Error('The status must be pending approval!');
 
-                        //if "Change Approval Status" <> Rec."Change Approval Status"::Approved then begin
                         VarVariant := Rec;
                         CustomApprovals.OnCancelDocApprovalRequest(VarVariant);
-                        //end;
-                        // ApprovalsMgmt.OnCancelPVApprovalRequest(Rec);
                     end;
                 }
                 action("Approval Entries")
@@ -594,7 +609,6 @@ page 51525337 "Employee Change Card"
                     Image = Approvals;
                     Promoted = true;
                     PromotedCategory = Category5;
-                    //PromotedIsBig = true;
                     RunPageMode = View;
 
                     trigger OnAction()
@@ -645,7 +659,6 @@ page 51525337 "Employee Change Card"
                                 Employees."Phone No." := Rec."Phone Number";
                                 Employees."Birth Date" := Rec."Birth Date";
                                 Employees.Status := Rec.Status;
-                                //Employees.Gender := Rec.Gender;
                                 if Rec.Gender = Rec.Gender::Female then
                                     Employees.Gender := "Employee Gender"::Female;
                                 if Rec.Gender = Rec.Gender::Male then
