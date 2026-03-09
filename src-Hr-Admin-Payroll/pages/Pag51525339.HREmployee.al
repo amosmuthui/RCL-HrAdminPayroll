@@ -12,26 +12,26 @@ page 51525339 "HR Employee"
             field("Employee Act. Qty"; Rec."Employee Act. Qty")
             {
                 Caption = 'Active';
-                Editable = false;
+                //Editable = false;
             }
             field("Employee Arc. Qty"; Rec."Employee Arc. Qty")
             {
                 Caption = 'Archived';
-                Editable = false;
+                //Editable = false;
             }
             field("""Employee Act. Qty""+""Employee Arc. Qty"""; Rec."Employee Act. Qty" + Rec."Employee Arc. Qty")
             {
                 Caption = 'All';
-                Editable = false;
+                //Editable = false;
             }
             group("General Information")
             {
                 Caption = 'General Information';
-                Editable = CanEditCard;
+                //Editable = CanEditCard;
                 field("No."; Rec."No.")
                 {
                     AssistEdit = true;
-                    Editable = false;
+                    //Editable = false;
 
                     trigger OnAssistEdit()
                     begin
@@ -46,18 +46,18 @@ page 51525339 "HR Employee"
                 {
                     DrillDown = true;
                     ShowMandatory = true;
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("First Name"; Rec."First Name")
                 {
                     ShowMandatory = true;
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Middle Name"; Rec."Middle Name")
                 {
                     //Caption = 'Other Names';
                     //ShowMandatory = true;
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Search Name"; Rec."Search Name")
                 {
@@ -102,7 +102,7 @@ page 51525339 "HR Employee"
                 }
                 field("Supervisor Name"; Rec."Supervisor Name")
                 {
-
+                    Editable = SupervisorEditable;
                 }
                 field("Is Seconded"; Rec."Is Seconded")
                 {
@@ -196,30 +196,30 @@ page 51525339 "HR Employee"
                 }
                 field("Workstation Country"; Rec."Workstation Country")
                 {
-                    Editable = MovementFieldsEditable;
+                    //Editable = MovementFieldsEditable;
                 }
                 field(Station; Rec.Station)
                 {
-                    Editable = MovementFieldsEditable;
+                    //Editable = MovementFieldsEditable;
                 }
                 field("Responsibility Center"; Rec."Responsibility Center")
                 {
-                    Editable = MovementFieldsEditable;
+                    //Editable = MovementFieldsEditable;
                 }
                 field("Is HoD"; Rec."Is HoD")
                 { }
                 field("Sub Responsibility Center"; Rec."Sub Responsibility Center")
                 {
                     Caption = 'Section';
-                    Editable = MovementFieldsEditable;
+                    //Editable = MovementFieldsEditable;
                 }
                 field("Sub Section"; Rec."Sub Section")
                 {
-                    Editable = CanEditCard;
+                    // Editable = CanEditCard;
                 }
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
-                    Editable = true;
+                    Editable = false;
                     Visible = false;
                 }
                 field(Position; Rec.Position)
@@ -230,15 +230,15 @@ page 51525339 "HR Employee"
                 }
                 field("Job Title"; Rec."Job Title")
                 {
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Annual Leave Entitlement"; Rec."Annual Leave Entitlement")
                 {
-                    Editable = CanEditLeaveInfo;
+                    //Editable = CanEditLeaveInfo;
                 }
                 field("Suspend Leave Accrual"; Rec."Suspend Leave Accrual")
                 {
-                    Editable = CanEditLeaveInfo;
+                    //Editable = CanEditLeaveInfo;
                 }
                 field("Leave Accrual Suspended By"; Rec."Leave Accrual Suspended By")
                 { }
@@ -246,29 +246,29 @@ page 51525339 "HR Employee"
                 { }
                 field("Medical Insurance"; Rec."Medical Insurance")
                 {
-                    Editable = CanEditCard;
+                    //Editable = CanEditCard;
                 }
                 field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
-                    Editable = true;
+                    //Editable = true;
                     Visible = false;
                 }
                 field(Level; Rec.Level)
                 {
-                    Editable = false;
+                    //Editable = false;
                     Visible = false;
                 }
                 field("Employee Job Type"; Rec."Employee Job Type")
                 {
                     Caption = 'Job Type (for Fleet)';
-                    Editable = true;
+                    //Editable = true;
                     Enabled = true;
                     Visible = TRUE;
                 }
                 field("Notice Period"; Rec."Notice Period")
                 {
                     Caption = 'Notice Period After Confirmation';
-                    Editable = false;
+                    //Editable = false;
                     Visible = false;
                 }
                 field("Current Appointment Date"; Rec."Current Appointment Date")
@@ -284,7 +284,7 @@ page 51525339 "HR Employee"
             part("Staff Movement"; "Internal Emp. History List")
             {
                 SubPageLink = "Emp No." = FIELD("No.");
-                Editable = CanEditCard;
+                //Editable = CanEditCard;
             }
             group("Airtime Management")
             {
@@ -340,7 +340,7 @@ page 51525339 "HR Employee"
                 }
                 field("Bank Name"; Rec."Bank Name")
                 {
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Bank Branch Code"; Rec."Bank Branch Code")
                 {
@@ -349,7 +349,7 @@ page 51525339 "HR Employee"
                 }
                 field("Bank Brach Name"; Rec."Bank Brach Name")
                 {
-                    Editable = false;
+                    //Editable = false;
                     Visible = false;
                 }
                 field("Bank Account No"; Rec."Bank Account No")
@@ -439,12 +439,12 @@ page 51525339 "HR Employee"
                 field(Previous; Rec.Previous)
                 {
                     Caption = 'Previous Pointer';
-                    Editable = false;
+                    //Editable = false;
                     Visible = true;
                 }
                 field(Halt; Rec.Halt)
                 {
-                    Editable = false;
+                    //Editable = false;
                     Visible = false;
                 }
                 field("Home Ownership Status"; Rec."Home Ownership Status")
@@ -504,12 +504,12 @@ page 51525339 "HR Employee"
                 }
                 field("Retirement Date"; Rec."Retirement Date")
                 {
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Remainig Years Before Retireme"; Rec."Remainig Years Before Retireme")
                 {
                     Caption = 'Remaining Years Before Retirement';
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Suspend Probation Reminders"; Rec."Suspend Probation Reminders")
                 {
@@ -612,7 +612,7 @@ page 51525339 "HR Employee"
             group(Disciplinary)
             {
                 Caption = 'Disciplinary';
-                Editable = CanEditCard;
+                //Editable = CanEditCard;
                 field("Disciplinary Actions"; Rec."Disciplinary Actions")
                 {
                 }
@@ -620,7 +620,7 @@ page 51525339 "HR Employee"
             group(Separation)
             {
                 Caption = 'Separation';
-                Editable = CanEditCard;
+                //Editable = CanEditCard;
                 field(Status; Rec.Status)
                 {
                 }
@@ -634,7 +634,7 @@ page 51525339 "HR Employee"
                 }
                 field("Cause of Inactivity"; Rec."Cause of Inactivity")
                 {
-
+                    //Editable = CanEditCard;
                 }
                 field("Termination Category"; Rec."Termination Category")
                 {
@@ -836,7 +836,7 @@ page 51525339 "HR Employee"
                                     ExistingMovements."Contractual Amount Value" := Emps."Assigned Gross Pay";
                                     ExistingMovements."First Date" := Emps."Date Of Join";
                                     if ExistingMovements."First Date" = 0D then
-                                        ExistingMovements."First Date" := 19000101D;
+                                    ExistingMovements."First Date" := 19000101D;
                                     ExistingMovements."Last Date" := Emps."Date Of Leaving";
                                     if ExistingMovements."Last Date" = 0D then
                                         ExistingMovements."Last Date" := 20501231D;
@@ -1272,6 +1272,11 @@ page 51525339 "HR Employee"
         Rec.Validate(Position);
     end;
 
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        SupervisorEditable := true;
+    end;
+
     trigger OnOpenPage()
     begin
         MovementFieldsEditable := true;
@@ -1333,6 +1338,7 @@ page 51525339 "HR Employee"
     end;
 
     var
+        SupervisorEditable: Boolean;
         //Dmsmngr: Codeunit "DMS Management";
         DocType: Option ,"Purchase Requisition",Imprest,"Imprest Surrender","Employee Data","RFX Documents";
         MovementRec: Record "Internal Employement History";
@@ -1345,3 +1351,14 @@ page 51525339 "HR Employee"
         CanEditLeaveInfo: Boolean;
         CanViewHR: Boolean;
 }
+
+
+
+
+
+
+
+
+
+
+
