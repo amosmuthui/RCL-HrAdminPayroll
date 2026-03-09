@@ -836,7 +836,7 @@ page 51525339 "HR Employee"
                                     ExistingMovements."Contractual Amount Value" := Emps."Assigned Gross Pay";
                                     ExistingMovements."First Date" := Emps."Date Of Join";
                                     if ExistingMovements."First Date" = 0D then
-                                    ExistingMovements."First Date" := 19000101D;
+                                        ExistingMovements."First Date" := 19000101D;
                                     ExistingMovements."Last Date" := Emps."Date Of Leaving";
                                     if ExistingMovements."Last Date" = 0D then
                                         ExistingMovements."Last Date" := 20501231D;
