@@ -26,7 +26,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
             }
             field("Daily Rate"; Rec."Daily Rate")
             {
-
                 trigger OnValidate()
                 begin
                     if (Rec."Daily Rate" > 0) and (not Rec."Apply Daily Rates") then
@@ -109,7 +108,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                 }
                 field("Bank Branch Code"; Rec."Bank Branch Code")
                 {
-                    //ShowMandatory = true;
                     Visible = true;
                 }
                 field("Bank Brach Name"; Rec."Bank Brach Name")
@@ -154,7 +152,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                 }
                 field("Assigned Gross Pay"; Rec."Assigned Gross Pay")
                 {
-                    //Caption = 'Gross Pay';
                     Editable = false;
                     Visible = CanEditPaymentInfo;
                 }
@@ -178,7 +175,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                 }
                 field("Payment/Bank Country"; Rec."Payment/Bank Country")
                 {
-
                 }
                 field("Payment/Bank Currency"; Rec."Payment/Bank Currency")
                 {
@@ -192,7 +188,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                 {
                     Tooltip = 'For those who dont earn transport allowance';
                 }
-
                 field("Apply Paye Multiplier"; Rec."Apply Paye Multiplier")
                 { }
                 field("Paye Multiplier"; Rec."Paye Multiplier")
@@ -268,7 +263,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                     Editable = true;
                     Visible = true;
                 }
-
                 field(Halt; Rec.Halt)
                 {
                     Editable = false;
@@ -333,18 +327,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                     Caption = 'Remaining Years Before Retirement';
                     Editable = false;
                 }
-                /*field("First Retirement Reminder Sent"; Rec."First Retirement Reminder Sent")
-                {
-                }
-                field("Second Retirement Reminder Sent"; Rec."Second Retirement Reminder Sent")
-                {
-                }
-                field("Third Retirement Reminder Sent"; Rec."Third Retirement Reminder Sent")
-                {
-                }
-                field("Final Retirement Reminder Sent"; Rec."Final Retirement Reminder Sent")
-                {
-                }*/
                 field("Suspend Probation Reminders"; Rec."Suspend Probation Reminders")
                 {
                 }
@@ -363,7 +345,22 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
         {
             field("Supervisor Name"; Rec."Supervisor Name")
             {
+                Editable = IsNewRecord;
+                LookupPageId = "Employee List";
 
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    EmpList: Page "Employee List";
+                    EmpRec: Record Employee;
+                begin
+                    if IsNewRecord then begin
+                        if EmpList.RunModal() = Action::LookupOK then begin
+                            EmpList.GetRecord(EmpRec);
+                            Rec."Supervisor Name" := EmpRec."No.";
+                        end;
+                        exit(true);
+                    end;
+                end;
             }
             field("Contract Start Date"; Rec."Contract Start Date")
             {
@@ -371,7 +368,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
             }
             field("Cause of Inactivity"; Rec."Cause of Inactivity")
             {
-
             }
         }
 
@@ -412,48 +408,17 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         AssMatrix2: Record "Assignment Matrix";
                         LastPeriod: Date;
                     begin
-                        /*EmpRec.Reset;
-                        EmpRec.SetRange(EmpRec."No.", Rec."No.");
-                        if EmpRec.Find('-') then begin
-                            EmpRec.Setrange("Payroll Currency", Rec."Payroll Currency");
-                            REPORT.Run(51525117, true, true, EmpRec);
-                        end;*/
-                        //Copy records for a specific employee                    
-
                         periodrec.Reset;
                         periodrec.SetRange(periodrec.Closed, false);
                         if periodrec.FindLast then begin
-                            /*LastPeriod := CalcDate('-1M', periodrec."Starting Date");
                             EmpRec.Reset();
                             EmpRec.SETRANGE(EmpRec."No.", Rec."No.");
-                            if EmpRec.FindFirst() and (Rec."No." = 'WB0150') then begin
-                                AssMatrix.Reset();
-                                AssMatrix.SetRange("Employee No", EmpRec."No.");
-                                AssMatrix.SetRange("Payroll Period", LastPeriod);
-                                if not AssMatrix.FindFirst() then begin
-                                    AssMatrix1.Reset();
-                                    AssMatrix1.SetRange("Employee No", EmpRec."No.");
-                                    AssMatrix1.SetRange("Payroll Period", periodrec."Starting Date");
-                                    if AssMatrix1.FindSet() then
-                                        repeat
-                                            AssMatrix2.Reset();
-                                            AssMatrix2.TransferFields(AssMatrix1);
-                                            AssMatrix2."Payroll Period" := LastPeriod;
-                                            AssMatrix2.Closed := true;
-                                            AssMatrix2.Insert();
-                                        until AssMatrix1.Next() = 0;
-                                end;
-                            end;*/
-
-                            EmpRec.Reset();
-                            EmpRec.SETRANGE(EmpRec."No.", Rec."No.");
-                            //EmpRec.SetRange("Payroll Country", Rec."Payroll Country");
-                            NewPayslipReport.SETTABLEVIEW(EmpRec);//Set the dataitem filtersp
+                            NewPayslipReport.SETTABLEVIEW(EmpRec);
                             CurrentPeriodRec.Reset;
                             CurrentPeriodRec.SetRange(CurrentPeriodRec."Starting Date", periodrec."Starting Date");
                             if CurrentPeriodRec.FindLast then
-                                NewPayslipReport.SETTABLEVIEW(CurrentPeriodRec);//Set the dataitem filters
-                            NewPayslipReport.SetReportFilter(Rec."No.", periodrec."Starting Date", Rec."Payroll Currency");//Set the request page filters
+                                NewPayslipReport.SETTABLEVIEW(CurrentPeriodRec);
+                            NewPayslipReport.SetReportFilter(Rec."No.", periodrec."Starting Date", Rec."Payroll Currency");
                             NewPayslipReport.Run();
                         end;
                     end;
@@ -476,16 +441,13 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                             EmpRec.Reset();
                             EmpRec.SETRANGE(EmpRec."No.", Rec."No.");
                             EmpRec.SetRange("Payroll Country", Rec."Payroll Country");
-                            PayrollRunReport.SETTABLEVIEW(EmpRec);//Set the dataitem filters
-                            PayrollRunReport.SetReportFilter(periodrec."Starting Date", Rec."No.");//Set the request page filters
+                            PayrollRunReport.SETTABLEVIEW(EmpRec);
+                            PayrollRunReport.SetReportFilter(periodrec."Starting Date", Rec."No.");
                             PayrollRunReport.RUN;
 
-                            //Show who processed and when
                             PayProcessHeader.RESET;
-                            //PayProcessHeader.SETRANGE(No,Rec.No);
                             PayProcessHeader.SETRANGE("Payroll Period", periodrec."Starting Date");
                             IF PayProcessHeader.FIND('-') THEN begin
-                                //Message('here %1', PayProcessHeader."Payroll Processing No");
                                 PayProcessHeader."Date Processed" := TODAY;
                                 PayProcessHeader.Modify();
                             end;
@@ -501,7 +463,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Caption = 'Additional Earnings and Deductions';
                         Image = Payment;
                         RunObject = Page "Additional Transactions";
-                        //Visible = CanEditPaymentInfo or CanEditCard;
                         RunPageLink = "WB No." = FIELD("No.");
                     }
                     action("Assign Earnings")
@@ -511,7 +472,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Image = Payment;
                         RunObject = Page "Payment & Deductions";
                         RunPageLink = "Employee No" = FIELD("No."),
-                                  //Country = FIELD("Payroll Country"),
                                   Type = CONST(Payment),
                                   Closed = CONST(false);
                     }
@@ -525,7 +485,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Caption = 'Display Recurring Earnings List';
                         RunObject = Page "Payment & Deductions";
                         RunPageLink = "Employee No" = FIELD("No."),
-                                  //Country = FIELD("Payroll Country"),
                                   Type = CONST(Payment),
                                   Closed = CONST(false),
                                   Frequency = CONST(Recurring);
@@ -535,7 +494,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Caption = 'Display Non-recurring Earnings List';
                         RunObject = Page "Payment & Deductions";
                         RunPageLink = "Employee No" = FIELD("No."),
-                                  //Country = FIELD("Payroll Country"),
                                   Type = CONST(Payment),
                                   Closed = CONST(false),
                                   Frequency = CONST("Non-recurring");
@@ -559,7 +517,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Image = TaxPayment;
                         RunObject = Page "Payment & Deductions";
                         RunPageLink = "Employee No" = FIELD("No."),
-                                  //Country = FIELD("Payroll Country"),
                                   Type = CONST(Deduction),
                                   Closed = CONST(false);
                     }
@@ -573,7 +530,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Caption = 'Display Recurring  Deductions  List';
                         RunObject = Page "Payment & Deductions";
                         RunPageLink = "Employee No" = FIELD("No."),
-                                  //Country = FIELD("Payroll Country"),
                                   Type = CONST(Deduction),
                                   Closed = CONST(false),
                                   Frequency = CONST(Recurring);
@@ -583,7 +539,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
                         Caption = 'Display Non-Recurring Deduction List';
                         RunObject = Page "Payment & Deductions";
                         RunPageLink = "Employee No" = FIELD("No."),
-                                  //Country = FIELD("Payroll Country"),
                                   Type = CONST(Deduction),
                                   Closed = CONST(false),
                                   Frequency = CONST("Non-recurring");
@@ -648,11 +603,15 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
         end;
     end;
 
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        IsNewRecord := true;
+    end;
+
     trigger OnOpenPage()
     begin
         Rec.Validate(Position);
         SetNoFieldVisible;
-        //IsCountyVisible := FormatAddress.UseCounty("Country/Region Code");
         SecondVisible := false;
         Posting.Reset;
         Posting.SetRange(Code, Rec."Posting Group");
@@ -681,6 +640,7 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
             Error('Apologies, but it seems you don''t have the necessary permissions to view this page!');
     end;
 
+    // *** CHANGED: Added Last Modified By stamp ***
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
         FreshRec: Record Employee;
@@ -698,6 +658,7 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
             FreshRec."Job Title" := Rec."Job Title";
             FreshRec."Overtime AC" := Rec."Overtime AC";
             FreshRec."Overtime Amount Currency" := Rec."Overtime Amount Currency";
+            FreshRec."Last Modified By" := CopyStr(UserId, 1, MaxStrLen(FreshRec."Last Modified By"));
             FreshRec.Modify();
         end;
     end;
@@ -706,6 +667,7 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
         CanEditPaymentInfo: Boolean;
         UserSetup: Record "User Setup";
         CanEditCard: Boolean;
+        IsNewRecord: Boolean;
         CanEditLeaveInfo: Boolean;
         CanViewPayrollCard: Boolean;
         SecondVisible: Boolean;
@@ -715,7 +677,6 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
         NewPayslipReport: Report "New Payslip";
         CurrentPeriodRec: Record "Payroll Period";
 
-
     local procedure SetNoFieldVisible()
     var
         DocumentNoVisibility: Codeunit DocumentNoVisibility;
@@ -723,3 +684,8 @@ pageextension 51525302 "Employee Card Ext HR" extends "Employee Card"
         NoFieldVisible := DocumentNoVisibility.EmployeeNoIsVisible;
     end;
 }
+
+
+
+
+
