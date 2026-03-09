@@ -146,14 +146,9 @@ table 51525309 "Change Request"
         field(28; "Bank Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            //TableRelation = "KBA Bank Names"."Bank Code";
 
             trigger OnValidate()
             begin
-                /*KBABankNames.Reset;
-                KBABankNames.SetRange(KBABankNames."Bank Code", "Bank Code");
-                if KBABankNames.Find('-') then
-                    "Bank Name" := KBABankNames."Bank Name";*/
             end;
         }
         field(29; "Bank Name"; Text[50])
@@ -163,15 +158,9 @@ table 51525309 "Change Request"
         field(30; "Bank Branch Code"; Code[30])
         {
             DataClassification = ToBeClassified;
-            //TableRelation = "Kenya Bankers Association Code"."Branch Code" WHERE("Bank Code" = FIELD("Bank Code"));
 
             trigger OnValidate()
             begin
-                /*KenyaBankersAssociationCode.Reset;
-                KenyaBankersAssociationCode.SetRange("Bank Code", "Bank Code");
-                KenyaBankersAssociationCode.SetRange(KenyaBankersAssociationCode."Branch Code", "Bank Branch Code");
-                if KenyaBankersAssociationCode.Find('-') then
-                    "Bank Brach Name" := KenyaBankersAssociationCode."Branch Name";*/
             end;
         }
         field(31; "Bank Brach Name"; Text[50])
@@ -182,14 +171,9 @@ table 51525309 "Change Request"
         {
             DataClassification = ToBeClassified;
             Editable = false;
-            //TableRelation = "KBA Bank Names"."Bank Code";
 
             trigger OnValidate()
             begin
-                /*KBABankNames.Reset;
-                KBABankNames.SetRange(KBABankNames."Bank Code", "Bank Code");
-                if KBABankNames.Find('-') then
-                    "Bank Name" := KBABankNames."Bank Name";*/
             end;
         }
         field(33; "Bank Name(Prev)"; Text[50])
@@ -201,15 +185,9 @@ table 51525309 "Change Request"
         {
             DataClassification = ToBeClassified;
             Editable = false;
-            //TableRelation = "Kenya Bankers Association Code"."Branch Code" WHERE("Bank Code" = FIELD("Bank Code"));
 
             trigger OnValidate()
             begin
-                /*KenyaBankersAssociationCode.Reset;
-                KenyaBankersAssociationCode.SetRange("Bank Code", "Bank Code");
-                KenyaBankersAssociationCode.SetRange(KenyaBankersAssociationCode."Branch Code", "Bank Branch Code");
-                if KenyaBankersAssociationCode.Find('-') then
-                    "Bank Brach Name" := KenyaBankersAssociationCode."Branch Name";*/
             end;
         }
         field(35; "Bank Brach Name(Prev)"; Text[50])
@@ -410,8 +388,6 @@ table 51525309 "Change Request"
 
             trigger OnValidate()
             begin
-                if "No." = '' then
-                    Insert(true);
                 if Employees.Get("Emp No.") then begin
                     "First Name" := Employees."First Name";
                     "First Name(Prev)" := Employees."First Name";
@@ -517,6 +493,18 @@ table 51525309 "Change Request"
                     "Prev Date Of Leaving" := Employees."Date Of Leaving";
                     "Sub Responsibility Center" := Employees."Sub Responsibility Center";
                     "Prev Sub Responsibility Center" := Employees."Sub Responsibility Center";
+                    // *** NEW: Auto-populate Supervisor Name from Employee ***
+                    "New Supervisor No" := CopyStr(Employees."Supervisor Name", 1, MaxStrLen("New Supervisor No"));
+                    "Prev Supervisor No" := CopyStr(Employees."Supervisor Name", 1, MaxStrLen("Prev Supervisor No"));
+                    "New Supervisor Full Name" := '';
+                    "Prev Supervisor Full Name" := '';
+                    if "New Supervisor No" <> '' then begin
+                        SupervisorRec.Reset();
+                        if SupervisorRec.Get("New Supervisor No") then begin
+                            "New Supervisor Full Name" := SupervisorRec."First Name" + ' ' + SupervisorRec."Last Name";
+                            "Prev Supervisor Full Name" := SupervisorRec."First Name" + ' ' + SupervisorRec."Last Name";
+                        end;
+                    end;
 
                     EmpKinChanges.Reset();
                     EmpKinChanges.SetRange("Employee Change Code", "No.");
@@ -546,7 +534,6 @@ table 51525309 "Change Request"
                             EmpBenefChanges.Insert();
                         until EmpBeneficiaries.Next() = 0;
 
-
                     EmpRelaChanges.Reset();
                     EmpRelaChanges.SetRange("Employee Change No.", "No.");
                     EmpRelaChanges.DeleteAll();
@@ -575,9 +562,6 @@ table 51525309 "Change Request"
                 CompanyJobsRec.SetRange("Job ID", Position);
                 if CompanyJobsRec.FindFirst then begin
                     "Job Title" := CompanyJobsRec."Job Description";
-                    //"Salary Scale":=CompanyJobsRec.Grade;
-                    //"Notice Period":=CompanyJobsRec."Notice Period";
-                    // "Global Dimension 1 Code":=CompanyJobsRec."Dimension 1";                    
                 end;
             end;
         }
@@ -623,8 +607,6 @@ table 51525309 "Change Request"
         {
             Editable = false;
         }
-
-
         field(81; "Annual Leave Entitlement"; Decimal)
         {
             trigger OnValidate()
@@ -723,7 +705,6 @@ table 51525309 "Change Request"
             DataClassification = ToBeClassified;
             TableRelation = "Responsibility Center".Code;
         }
-
         field(104; "Prev Responsibility Center"; Code[240])
         {
             Caption = 'Prev Department';
@@ -771,8 +752,6 @@ table 51525309 "Change Request"
             DataClassification = ToBeClassified;
             TableRelation = "Sub Responsibility Center".Code where("Responsibility Center" = field("Responsibility Center"));
         }
-
-
         field(118; "Prev Sub Responsibility Center"; Code[70])
         {
             Caption = 'Prev Section';
@@ -823,6 +802,42 @@ table 51525309 "Change Request"
             Editable = false;
             OptionMembers = "File Update",Onboarding;
         }
+        // *** NEW FIELDS: Supervisor Name tracking ***
+        field(131; "New Supervisor No"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = Employee."No.";
+            Caption = 'Supervisor Name';
+
+            trigger OnValidate()
+            begin
+                if "New Supervisor No" <> '' then begin
+                    if SupervisorRec.Get("New Supervisor No") then
+                        "New Supervisor Full Name" := SupervisorRec."First Name" + ' ' + SupervisorRec."Last Name"
+                    else
+                        Error('Employee No. %1 does not exist.', "New Supervisor No");
+                end else
+                    "New Supervisor Full Name" := '';
+            end;
+        }
+        field(132; "Prev Supervisor No"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+            Caption = 'Previous Supervisor';
+        }
+        field(133; "New Supervisor Full Name"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+            Caption = 'Supervisor Full Name';
+        }
+        field(134; "Prev Supervisor Full Name"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+            Editable = false;
+            Caption = 'Previous Supervisor Full Name';
+        }
 
     }
     keys
@@ -838,7 +853,7 @@ table 51525309 "Change Request"
         fieldgroup(DropDown; "No.", "First Name", "Last Name", "First Name(Prev)", "Middle Name(Prev)")
         {
         }
-        fieldgroup(Brick; "Last Name", "First Name", "Middle Name(Prev)"/*, Field140*/)
+        fieldgroup(Brick; "Last Name", "First Name", "Middle Name(Prev)")
         {
         }
     }
@@ -860,9 +875,6 @@ table 51525309 "Change Request"
         if Rec."Change Approval Status" <> Rec."Change Approval Status"::Open then
             Error('You cannot delete the record at this stage!');
     end;
-
-
-
 
     procedure CheckDelete(ChangeNo: Code[20])
     begin
@@ -902,8 +914,6 @@ table 51525309 "Change Request"
         BlockedEmplForJnrlErr: Label 'You cannot create this document because employee %1 is blocked due to privacy.', Comment = '%1 = employee no.';
         BlockedEmplForJnrlPostingErr: Label 'You cannot post this document because employee %1 is blocked due to privacy.', Comment = '%1 = employee no.';
         CompanyJobsRec: Record "Company Jobs";
-        //CareerEvent: Page "HR Career Event Option Box";
-        //HRCareerHistoryRec: Record "HR Career History";
         EmployeeRec: Record Employee;
         SalaryScalesRec: Record "Salary Scales";
         Dates: Codeunit "HR Dates";
@@ -911,10 +921,10 @@ table 51525309 "Change Request"
         ansmsg: Text;
         ans: Boolean;
         EmployeePostingGroupRec: Record "Staff Posting Group";
-        //KBABankNames: Record "KBA Bank Names";
-        //KenyaBankersAssociationCode: Record "Kenya Bankers Association Code";
         HRDates: Codeunit "HR Dates";
         Employees: Record Employee;
+        // *** NEW: SupervisorRec for supervisor lookup ***
+        SupervisorRec: Record Employee;
         EmpKins: Record "Employee Kin";
         EmpKinChanges: Record "Employee Kin Changes";
         EmpBeneficiaries: Record "Employee Beneficiaries";
@@ -1009,6 +1019,8 @@ table 51525309 "Change Request"
             Employees."Date of Appointment" := "Date of Appointment";
             Employees."Date Of Leaving" := "Date Of Leaving";
             Employees."Sub Responsibility Center" := "Sub Responsibility Center";
+            // *** NEW: Push approved Supervisor Name back to Employee card ***
+            Employees."Supervisor Name" := "New Supervisor No";
             Employees.Modify;
         end;
 
@@ -1017,8 +1029,7 @@ table 51525309 "Change Request"
         Movement.SetRange("Emp No.", "Emp No.");
         Movement.SetRange(Status, Movement.Status::Current);
         if Movement.FindFirst() then begin
-            if ((Rec."Create New Movement") and ("Movement Start Date" <> 0D)) //If not mvmt exists then we'll create separately the normal way - for now we only cater if it's for a change
-    then begin
+            if ((Rec."Create New Movement") and ("Movement Start Date" <> 0D)) then begin
                 MovementInit.Init();
                 MovementInit.TransferFields(Movement);
                 MovementInit.Type := "Movement Type";
@@ -1052,7 +1063,6 @@ table 51525309 "Change Request"
                 if not EmpKins.Insert() then
                     EmpKins.Modify();
             until EmpKinChanges.Next() = 0;
-
 
         EmpBeneficiaries.Reset();
         EmpBeneficiaries.SetRange("Employee Code", "Emp No.");
@@ -1107,12 +1117,10 @@ table 51525309 "Change Request"
                 AttachmentsEmp.Insert();
             until AttachmentsRequest.Next() = 0;
 
-
         Updated := true;
         "Modified By" := UserId;
         "Date Modified" := Today;
         "Time Modified" := Time;
     end;
-
 
 }
